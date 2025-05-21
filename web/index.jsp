@@ -7,6 +7,12 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div id="Header">
+            
+            <h1>Bienvenido a nuestro programa</h1>
+            
+            
+        </div>
         <h1>Hello World!</h1>
     </body>
 </html>
