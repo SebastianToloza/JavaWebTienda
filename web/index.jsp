@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 20 may 2025, 8:13:29 p.m.
-    Author     : TOLOZA
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
