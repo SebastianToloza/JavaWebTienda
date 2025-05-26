@@ -35,7 +35,7 @@ body {
 }
 
 /* Contenedor de los botones con Flexbox */
-.button-container {
+.button-container form{
     display: flex;
     justify-content: center;
     gap: 15px;

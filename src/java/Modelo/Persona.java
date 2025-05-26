@@ -12,10 +12,21 @@ public class Persona {
     public Persona(){
         
         usuario = "sebas";
-        url="jdbc:mysql://localhost:3306/Persona";
+        url="jdbc:mysql://localhost:3306/registro_agricola";
         clave="";
         conex =null;
         
         
+    }
+    public void hacerConexion () throws SQLException{
+        try{
+            conex=DriverManager.getConnection(url,usuario,clave);
+            System.out.println("Dato conexion:" + conex.toString());
+        }catch(SQLException e){
+            System.out.println("ERROR:" + e);
+        }
+    }
+    public void guardarDatos(){
+    
     }
 }

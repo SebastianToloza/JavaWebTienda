@@ -15,11 +15,11 @@
         <div class="body">
             <p>Presiona uno de los botones:</p>
             <div class="button-container">
-                <form action="controlador" method="Post">
-                    <button>Botón 1</button>
-                    <button>Botón 2</button>
-                    <button>Botón 3</button>
-                    <button>Botón 4</button>
+                <form action="Controlador/SaltoFormulario.jsp" method="Post">
+                    <button>produccion agricola</button>
+                    <button>Control huertos corrales</button>
+                    <button> registro enfermedades</button>
+                    <button>control humedad</button>
                 </form>
                
             </div>
