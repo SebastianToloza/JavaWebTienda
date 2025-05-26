@@ -1,17 +1,29 @@
-<%-- 
-    Document   : index
-    Created on : 20 may 2025, 8:13:29 p.m.
-    Author     : TOLOZA
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!sss </h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Página con Botones</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Mi Encabezado
+        </div>
+
+        <div class="body">
+            <p>Presiona uno de los botones:</p>
+            <div class="button-container">
+                <button>Botón 1</button>
+                <button>Botón 2</button>
+                <button>Botón 3</button>
+                <button>Botón 4</button>
+            </div>
+        </div>
+
+        <div class="footer">
+        </div>
+    </div>
+</body>
 </html>
