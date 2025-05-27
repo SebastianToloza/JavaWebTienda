@@ -16,10 +16,10 @@
             <p>Presiona uno de los botones:</p>
             <div class="button-container">
                 <form action="SaltoFormulario" method="Post">
-                    <button>produccion agricola</button>
-                    <button>Control huertos corrales</button>
-                    <button> registro enfermedades</button>
-                    <button>control humedad</button>
+                    <button name="eleccion" value="produccionAgricola">produccion agricola</button>
+                    <button name="eleccion" value="ControlHuertosCorrales">Control huertos corrales</button>
+                    <button name="eleccion" value="registroEnfermedades"> registro enfermedades</button>
+                    <button name="eleccion" value="controlHumedad">control humedad</button>
                 </form>
                
             </div>

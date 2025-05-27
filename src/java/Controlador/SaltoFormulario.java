@@ -17,17 +17,7 @@ public class SaltoFormulario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SaltoFormulario</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SaltoFormulario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
     }
 
    
@@ -40,7 +30,27 @@ public class SaltoFormulario extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException 
+    {
+        String accion = request.getParameter("eleccion");
+
+        switch (accion) {
+            case "produccionAgricola":
+                response.sendRedirect("RegistroProduccion.jsp");
+                break;
+            case "ControlHuertosCorrales":
+                response.sendRedirect("ControlHuertosCorrales.jsp");
+                break;
+            case "registroEnfermedades":
+                response.sendRedirect("RegistroEnfermedades.jsp");
+                break;
+            case "controlHumedad":
+                response.sendRedirect("ControlHumedad.jsp");
+                break;
+            default:
+                response.sendRedirect("error.jsp");
+                break;
+        }
         processRequest(request, response);
     }
 
