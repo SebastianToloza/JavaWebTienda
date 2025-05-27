@@ -1,0 +1,32 @@
+h1{
+    height: 5vh;
+    text-align: center;
+}
+
+#contenedor{
+    display: flex;
+    border: 2px solid black;
+    width: 40%;
+    height: 95vh;
+    flex-direction: column;
+    justify-self: center;
+}
+#contenedor form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    height: 90vh;
+    
+}
+form input{
+    width: 21vw;
+    height: 5vh
+}
+form select{
+    width: 21.5vw;
+    height: 5.5vh
+}
+form label{
+    font-size: 20px;
+}
