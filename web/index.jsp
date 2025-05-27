@@ -15,7 +15,7 @@
         <div class="body">
             <p>Presiona uno de los botones:</p>
             <div class="button-container">
-                <form action="Controlador/SaltoFormulario.jsp" method="Post">
+                <form action="SaltoFormulario" method="Post">
                     <button>produccion agricola</button>
                     <button>Control huertos corrales</button>
                     <button> registro enfermedades</button>
