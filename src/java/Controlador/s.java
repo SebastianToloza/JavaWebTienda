@@ -10,23 +10,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "SaltoFormulario", urlPatterns = {"/SaltoFormulario"})
-public class SaltoFormulario extends HttpServlet {
+@WebServlet(name = "SAlto", urlPatterns = {"/SAlto"})
+public class s extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SaltoFormulario</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SaltoFormulario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
@@ -37,14 +27,12 @@ public class SaltoFormulario extends HttpServlet {
         processRequest(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    
     @Override
     public String getServletInfo() {
         return "Short description";

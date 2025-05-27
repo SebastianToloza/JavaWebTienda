@@ -11,7 +11,7 @@
         <div class="header">
             Mi Encabezado
         </div>
-
+        
         <div class="body">
             <p>Presiona uno de los botones:</p>
             <div class="button-container">
