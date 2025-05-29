@@ -1,3 +1,6 @@
+#header{
+    background-color: green;
+}
 h1{
     height: 5vh;
     text-align: center;
@@ -19,9 +22,14 @@ h1{
     height: 90vh;
     
 }
+form div{
+    display: flex;
+    justify-content: space-around;
+    
+}
 form input{
     width: 21vw;
-    height: 5vh
+    height: 5vh;
 }
 form select{
     width: 21.5vw;
@@ -29,4 +37,11 @@ form select{
 }
 form label{
     font-size: 20px;
+    width: 12em;
+    
+}
+.botonesFinales{
+    width: 15vw;
+    height: 5vh;
+    
 }

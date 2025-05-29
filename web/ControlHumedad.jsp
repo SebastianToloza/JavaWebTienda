@@ -8,12 +8,17 @@
     </head>
     <body>
         <div id="contenedor">
-            <h1>Control de humedad</h1>
+            <div id="header">
+                <h1>Control de humedad</h1>
+            </div>
             <form>
                 
+                <div>
                 <label for="id">Identificador del Registro</label>
                 <input type="text"  id="id" name="identificado"><br>
-
+                </div>
+                
+                <div>
                 <label for="fruta">Tipo entidad:</label>
                 <select id="frutas">
                     <option value="manzana">Manzana</option>
@@ -21,21 +26,37 @@
                     <option value="naranja">Naranja</option>
                 </select><br>
                 
+                </div>
+                
+                
+                
+                <div>
                 <label for="nvHumedad">Nivel de humedad</label>
                 <input id="nvHumedad" type="number"><br>
+                </div>
                 
+                <div>
                 <label for="fruta">Tipo entidad:</label>
                 <select id="frutas">
                     <option value="manzana">Manzana</option>
                     <option value="banana">Banana</option>
                     <option value="naranja">Naranja</option>
                 </select><br>
+                </div>
                 
+                
+                <div>
                 <label for="fecha">Fecha de registro</label>
                 <input id="fecha" type="date"><br>
+                </div>
                 
-                <input type="submit" text="Eviar">
+                <div id="boton">
+                    <input type="submit" text="Guardar" class="botonesFinales">
+                    <input type="submit" text="Eviar" class="botonesFinales">
+                </div>
             </form>
+            
+            <% %>
             
         </div>
         
