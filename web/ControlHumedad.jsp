@@ -51,8 +51,8 @@
                 </div>
                 
                 <div id="boton">
-                    <input type="submit" text="Guardar" class="botonesFinales">
-                    <input type="submit" text="Eviar" class="botonesFinales">
+                    <input  type="submit" text="Guardar" class="botonesFinales">
+                    <input  type="submit" text="Eviar" class="botonesFinales">
                 </div>
             </form>
             
