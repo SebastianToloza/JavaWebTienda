@@ -1,20 +1,39 @@
 #container{
    display: flex;
-   border:1px solid black;
-   text-align: center;
    flex-direction: column;
-   margin:auto;
-   padding: 25px;
-   width: 205px;
-   align-items: center;
-   justify-content: space-around;
+   width: 30%;
+   height: 600px;
+   justify-content: space-between;
+   justify-self: center;
+   text-align: start;
 }
 
+#container form{
+    height: 95%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-family: arial;
+}
+
+#enviar{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-self: end;
+}
+
+
 label{
-    text-align: center
+    display: flex;
+    align-self: start;
 }
 
 h1{
     color: red;
-    text-align: center;
-}
+    padding: 5px;
+    margin: 5px;
+    font-family: arial;
+    font-size: 25px;
+    }
