@@ -6,6 +6,9 @@
    justify-content: space-between;
    justify-self: center;
    text-align: start;
+   border-radius:3%;
+   box-shadow:0 0 30px;
+   padding: 5px; 
 }
 
 #container form{
@@ -22,8 +25,8 @@
     display: flex;
     justify-content: center;
     align-self: end;
+    border-radius: 1px;
 }
-
 
 label{
     display: flex;
@@ -32,8 +35,11 @@ label{
 
 h1{
     color: red;
-    padding: 5px;
+    padding: 5%;
     margin: 5px;
     font-family: arial;
     font-size: 25px;
+    background-color: yellow;
+    border-radius: 3%;
     }
+
