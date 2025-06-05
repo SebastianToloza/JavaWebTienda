@@ -2,7 +2,7 @@ package Modelo;
 
 import java.sql.*;
 
-public class Persona {
+public class HumedadData {
     
     String usuario;
     String url;
@@ -10,7 +10,7 @@ public class Persona {
     Connection conex;
     public ResultSet resultadoConsulta;
 
-    public Persona(){
+    public HumedadData(){
         
         this.usuario ="root";
         this.url="jdbc:mysql://localhost:3306/registro_agricola?zeroDateTimeBehavior=CONVERT_TO_NULL";
@@ -24,7 +24,6 @@ public class Persona {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            // Maneja el error, por ejemplo lanzar SQLException
         }
         try{
       

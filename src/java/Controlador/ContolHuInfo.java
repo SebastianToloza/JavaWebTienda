@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import Modelo.Persona;
+import Modelo.HumedadData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +51,7 @@ public class ContolHuInfo extends HttpServlet {
         String Datos[]={tipoEntidad, tipoHumedad, fecha};
         
         boolean confirmador = true;
-        Persona objPersona = new Persona();
+        HumedadData objPersona = new HumedadData();
 
         
         try {
