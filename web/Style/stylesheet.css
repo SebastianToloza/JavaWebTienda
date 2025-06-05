@@ -9,6 +9,8 @@
    border-radius:3%;
    box-shadow:0 0 30px;
    padding: 5px; 
+   background-color: greenyellow;
+   margin: auto;
 }
 
 #container form{
