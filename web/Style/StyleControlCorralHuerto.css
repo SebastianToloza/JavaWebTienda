@@ -1,8 +1,84 @@
-body{
-    
-    borde: 2px solid green;
+#header{
+    background-color: green;    
 }
 h1{
-    font-size   : 200px;
-    color: green;
+    height: 5vh;
+    text-align: center;
+}
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url("https://img.freepik.com/foto-gratis/morskie-oko-tatry_1204-510.jpg?semt=ais_items_boosted&w=740");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#contenedor{
+    display: flex;
+    border: 2px solid black;
+    width: 40%;
+    height: 95vh;
+    flex-direction: column;
+    justify-self: center;
+}
+
+#contenedores{
+    display: flex;
+    border: 2px solid black;
+    width: 40%;
+    height: 95vh;
+    flex-direction: column;
+    justify-self: center;
+}
+#contenedores form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    height: 90vh;
+    
+}
+#contenedor form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    height: 90vh;
+    
+}
+form div{
+    display: flex;
+    justify-content: space-around;
+    
+}
+form input{
+    width: 21vw;
+    height: 5vh;
+    box-shadow: none;
+}
+form select{
+    width: 21.5vw;
+    height: 5.5vh
+}
+form label{
+    font-size: 20px;
+    width: 12em;
+    
+}
+.botonesFinales{
+    width: 15vw;
+    height: 5vh;
+    
+}
+
+
+/*-----------------Animciones-----------------*/
+input:hover{
+    box-shadow: 0px 0px 10px 3px rgb(162, 250, 83 );
+
+}
+
+.select:hover{
+    box-shadow: 0px 0px 10px 3px rgb(162, 250, 83 );    
+    background-color:  black;
 }
