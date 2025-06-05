@@ -1,0 +1,64 @@
+/* Estilo base del body para centrar todo con Flexbox */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header y footer */
+.header, .footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Cuerpo principal */
+.body {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor de los botones con Flexbox */
+.button-container form{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Estilo de los botones */
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #d0d0d0;
+}
+
+/* Footer */
+.footer {
+    font-size: 14px;
+    color: #666;
+}
