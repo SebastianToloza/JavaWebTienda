@@ -12,10 +12,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import Modelo.Persona;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet(name = "ContolHuInfo", urlPatterns = {"/ContolHuInfo"})
 public class ContolHuInfo extends HttpServlet {
-    Persona objPersona = new  Persona();
   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,41 +39,41 @@ public class ContolHuInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String identificador = request.getParameter("identificador");
+        
+        
+        int identificador = Integer.parseInt( request.getParameter("identificador"));
         String tipoEntidad = request.getParameter("tipoEntidad");
         int nivelHumedad = Integer.parseInt(request.getParameter("nivelHumedad"));
         String tipoHumedad = request.getParameter("tipoHumedad");
+        String fecha = request.getParameter("fechaRegistro");
         
         
+        String Datos[]={tipoEntidad, tipoHumedad, fecha};
+        
+        boolean confirmador = true;
+        Persona objPersona = new Persona();
+
         
         try {
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            Date fechaRegistro = formato.parse("fechaRegistro");
+            objPersona.hacerConexion();
+            confirmador = objPersona.confirmarInformacionRegistro(identificador);
+            System.out.println("Antes");
+            if (confirmador) {
+                try {
+                    objPersona.agregarRegistro(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ContolHuInfo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                System.out.println("hola");
+            }
 
-            System.out.println("Fecha registrada: " + fechaRegistro);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+                   Logger.getLogger(ContolHuInfo.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String Datos[]={identificador, tipoEntidad, tipoHumedad};
-        
-        
-        
-        System.out.println("-------------------------");
-        for(int i=0 ; i<Datos.length; i++){
-            
-           if(Datos[i].equalsIgnoreCase("")&& nivelHumedad==0){
-           
-           }
-        }
-        
-        
-        System.out.println("ID: " + Datos[0]);
-        System.out.println("tipo Entidad: " + Datos[1]);
-        System.out.println("nivelHumedad: " + Datos[2]);
-        System.out.println("tipoHumedad: " + Datos[3]);
-        System.out.println("fechaRegistro: " + Datos[4]);
+   
+       
 
          
         processRequest(request, response);
