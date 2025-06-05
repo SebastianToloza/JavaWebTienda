@@ -30,7 +30,7 @@
                 
                 <div>
                 <label for="nvHumedad">Nivel de humedad</label>
-                <input id="nvHumedad" type="number" name="nivelHumedad"><br>
+                <input id="nvHumedad" type="number" value="1" min="1" name="nivelHumedad"  required><br>
                 </div>
                 
                 <div>
