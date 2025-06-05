@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link rel="stylesheet" href="${pageContext.request.contextPath}/Style/stylesheet.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Style/stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>

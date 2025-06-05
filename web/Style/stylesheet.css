@@ -6,6 +6,11 @@
    justify-content: space-between;
    justify-self: center;
    text-align: start;
+   border-radius: 3%;
+   box-shadow: 0 0 30px;
+   padding: 5px; 
+   background-color: greenyellow;
+   margin: auto;
 }
 
 #container form{
@@ -14,7 +19,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    font-family: arial;
+    font-family: arial, sans-serif;
 }
 
 #enviar{
@@ -22,8 +27,9 @@
     display: flex;
     justify-content: center;
     align-self: end;
+    border-radius: 1px;
+    background-color: green;
 }
-
 
 label{
     display: flex;
@@ -32,8 +38,10 @@ label{
 
 h1{
     color: red;
-    padding: 5px;
+    padding: 5%;
     margin: 5px;
-    font-family: arial;
+    font-family: arial, sans-serif;
     font-size: 25px;
-    }
+    background-color: yellow;
+    border-radius: 3%;
+}

@@ -2,9 +2,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link rel="stylesheet" href="${pageContext.request.contextPath}/css/stylesheet.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Style/stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro Producción Agrícola</title>
     </head>
     <body>
         <div id="container">
@@ -25,8 +24,7 @@
                 <label for="descripcion">Digite la descripción:</label>
                 <input type="text" id="descripcion" name="descripcion">
                 
-                <button type="submit">Registrar</button>
+                <button type="submit" id="enviar">Registrar</button>
             </form>
         </div>
-    </body>
-</html>
+    </body
