@@ -7,6 +7,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <div id="contenedor">
             
             <div id="contenedorFormulario">
@@ -65,6 +66,7 @@
                 
                 <div id="registroConHumedad">
                     
+                    <% %>
                     
                 </div>
 
