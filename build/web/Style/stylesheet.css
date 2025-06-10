@@ -1,3 +1,8 @@
+#contenedotGeneral{
+    display: flex;
+    flex-direction: row;
+}
+
 #container{
    display: flex;
    flex-direction: column;
@@ -44,4 +49,19 @@ h1{
     font-size: 25px;
     background-color: yellow;
     border-radius: 3%;
+}
+
+#registros{
+    border-radius: 3%;
+    background-color: yellow;
+    width: 25%;
+    margin-top: auto;
+    align-items: center;
+    height: 600px;
+}
+
+#barraBusqueda{
+    border-radius: 4%; 
+    margin: auto;
+    padding: 5px;
 }

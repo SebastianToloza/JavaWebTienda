@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * @author SENA
  */
 @WebServlet(name = "SAlto", urlPatterns = {"/SAlto"})
-public class SAlto extends HttpServlet {
+public class controladorRegistro extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
