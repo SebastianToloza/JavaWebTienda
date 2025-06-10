@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet(name = "SaltoFormulario", urlPatterns = {"/SaltoFormulario"})
@@ -32,6 +33,7 @@ public class SaltoFormulario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
+        HttpSession misession = request.getSession();
         String accion = request.getParameter("eleccion");
 
         switch (accion) {
@@ -45,6 +47,8 @@ public class SaltoFormulario extends HttpServlet {
                 response.sendRedirect("RegistroEnfermedades.jsp");
                 break;
             case "controlHumedad":
+                
+               
                 response.sendRedirect("ControlHumedad.jsp");
                 break;
             default:

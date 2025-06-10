@@ -48,8 +48,6 @@ public class ContolHuInfo extends HttpServlet {
         String fecha = request.getParameter("fechaRegistro");
         
         
-        String Datos[]={tipoEntidad, tipoHumedad, fecha};
-        
         boolean confirmador = true;
         HumedadData objPersona = new HumedadData();
 

@@ -8,53 +8,71 @@
     </head>
     <body>
         <div id="contenedor">
-            <div id="header">
-                <h1>Control de humedad</h1>
+            
+            <div id="contenedorFormulario">
+                <div id="header">
+                    <h1>Control de humedad</h1>
+                </div>
+                <form action="ContolHuInfo" method="post">
+
+                    <div>
+                        <label for="id">Identificador del Registro</label>
+                        <input type="text"  id="id" name="identificador" required><br>
+                    </div>
+
+                    <div>
+                        <label for="entidad">Tipo entidad:</label>
+                        <select id="entidad" name="tipoEntidad" required>
+                            <option value="corral">corral</option>
+                            <option value="huerto">huerto</option>
+                        </select><br>
+                    </div>
+
+
+
+                    <div>
+                        <label for="nvHumedad">Nivel de humedad</label>
+                        <input id="nvHumedad" type="number" value="1" min="1" name="nivelHumedad"  required><br>
+                    </div>
+
+                    <div>
+                        <label for="tipHumedad">Tipo humedad</label>
+                        <select id="tipHumedad" name="tipoHumedad" required>
+                            <option value="condensacion">condensación</option>
+                            <option value="filtracion">filtración </option>
+                            <option value="capilaridad">capilaridad</option>
+                        </select><br>
+                    </div>
+
+
+                    <div>
+                        <label for="fecha">Fecha de registro</label>
+                        <input id="fecha" type="date" name="fechaRegistro" required><br>
+                    </div>
+
+                    <div id="boton">
+                        <input  type="submit" text="Guardar" class="botonesFinales">
+                        <input  type="submit" text="Eviar" class="botonesFinales">
+                    </div>
+                </form>
+
             </div>
-            <form action="ContolHuInfo" method="post">
+            <div id="registros">
+                <form action="ControlHumedadRegistros" method="get" id="Buscador">
+                    <input>
+                    <button>Buscar</button>
+                </form>
                 
-                <div>
-                <label for="id">Identificador del Registro</label>
-                <input type="text"  id="id" name="identificador" required><br>
+                <div id="registroConHumedad">
+                    
+                    
                 </div>
-                
-                <div>
-                <label for="entidad">Tipo entidad:</label>
-                <select id="entidad" name="tipoEntidad" required>
-                    <option value="corral">corral</option>
-                    <option value="huerto">huerto</option>
-                </select><br>
-                </div>
-                
-                
-                
-                <div>
-                <label for="nvHumedad">Nivel de humedad</label>
-                <input id="nvHumedad" type="number" value="1" min="1" name="nivelHumedad"  required><br>
-                </div>
-                
-                <div>
-                <label for="tipHumedad">Tipo humedad</label>
-                <select id="tipHumedad" name="tipoHumedad" required>
-                    <option value="condensacion">condensación</option>
-                    <option value="filtracion">filtración </option>
-                    <option value="capilaridad">capilaridad</option>
-                </select><br>
-                </div>
-                
-                
-                <div>
-                <label for="fecha">Fecha de registro</label>
-                <input id="fecha" type="date" name="fechaRegistro" required><br>
-                </div>
-                
-                <div id="boton">
-                    <input  type="submit" text="Guardar" class="botonesFinales">
-                    <input  type="submit" text="Eviar" class="botonesFinales">
-                </div>
-            </form>
+
+            </div>
+            
             
         </div>
+        
         
     </body>
 </html>
