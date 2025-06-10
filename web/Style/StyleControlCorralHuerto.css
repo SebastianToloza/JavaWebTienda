@@ -1,5 +1,6 @@
 #header{
-    background-color: green;    
+    background-color: green;
+  
 }
 h1{
     height: 5vh;
@@ -37,6 +38,7 @@ body{
     border: 2px solid black;
     height: 90vh;
     
+    
 }
 #contenedor form{
     display: flex;
@@ -44,6 +46,7 @@ body{
     justify-content: space-around;
     border: 2px solid black;
     height: 90vh;
+   
     
 }
 form div{
@@ -59,12 +62,14 @@ form input{
 form select{
     width: 21.5vw;
     height: 5.5vh
+        
 }
 form label{
     font-size: 20px;
     width: 12em;
     
 }
+
 .botonesFinales{
     width: 15vw;
     height: 5vh;
