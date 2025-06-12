@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -66,7 +67,24 @@
                 
                 <div id="registroConHumedad">
                     
-                    <% %>
+                    <%
+                        ArrayList<String> datos = (ArrayList<String>) session.getAttribute("datosTabla");
+
+                        if (datos != null) {
+                            for (String id : datos) {
+                    %>
+                                <div class="InformacionRegistro">
+                                    <p>ID Registro: <%= id%></p>
+                                </div>
+
+                    <%
+                            }
+                        }else {
+                    %>
+                                <p>No se encontraron datos.</p>
+                    <%
+                        }
+                    %>
                     
                 </div>
 

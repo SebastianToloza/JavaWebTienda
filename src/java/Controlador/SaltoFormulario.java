@@ -9,6 +9,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import  Modelo.HumedadData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.*;
+
 
 
 @WebServlet(name = "SaltoFormulario", urlPatterns = {"/SaltoFormulario"})
@@ -32,8 +39,35 @@ public class SaltoFormulario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
+            
     {
+        HumedadData objHumedadData = new HumedadData();
+        ArrayList<String> listaDatos = new ArrayList<>();
+        
+        
+        try {
+            objHumedadData.hacerConexion();
+        } catch (SQLException ex) {
+            Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ResultSet rs = objHumedadData.getId();
+
+            while(rs.next()){
+                
+                listaDatos.add(rs.getString("id_registro"));
+                System.out.println("Lista de IDs: " + listaDatos);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+;
         HttpSession misession = request.getSession();
+        misession.setAttribute("datosTabla", listaDatos);
+
+        
         String accion = request.getParameter("eleccion");
 
         switch (accion) {
@@ -54,6 +88,7 @@ public class SaltoFormulario extends HttpServlet {
             default:
                 response.sendRedirect("error.jsp");
                 break;
+                
         }
         processRequest(request, response);
     }

@@ -28,8 +28,6 @@ public class HumedadData {
         try{
       
             this.conex=DriverManager.getConnection(url,usuario,clave);
-            System.out.println("hola");
-            System.out.println("Dato conexion:" + conex.toString());
             
         }catch(SQLException e){
             System.out.println("ERROR:" + e);
@@ -41,7 +39,7 @@ public class HumedadData {
         String sqlText="SELECT id_registro FROM control_humedad";
         Statement consultarSentencia =this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
-        return resultadoConsulta;
+        return this.resultadoConsulta;
     }
     
     
