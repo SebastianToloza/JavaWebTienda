@@ -1,3 +1,11 @@
+body{
+   display: flex;
+   justify-content: space-around;
+    background-image: url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
 #contenedotGeneral{
     display: flex;
     flex-direction: row;
@@ -6,7 +14,7 @@
 #container{
    display: flex;
    flex-direction: column;
-   width: 30%;
+   width: 35%;
    height: 600px;
    justify-content: space-between;
    justify-self: center;
@@ -53,10 +61,9 @@ h1{
 
 #registros{
     border-radius: 3%;
-    background-color: yellow;
+    background-color: orange;
     width: 25%;
     margin-top: auto;
-    align-items: center;
     height: 600px;
 }
 
@@ -65,3 +72,4 @@ h1{
     margin: auto;
     padding: 5px;
 }
+
