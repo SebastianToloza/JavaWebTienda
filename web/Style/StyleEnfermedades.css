@@ -30,6 +30,7 @@ body{
     height: 95vh;
     flex-direction: column;
     justify-self: center;
+    
 }
 #contenedores form{
     display: flex;
@@ -57,6 +58,7 @@ form div{
     text-shadow: 1px 1px black;
     
 }
+
 form input{
     width: 21vw;
     height: 5vh;

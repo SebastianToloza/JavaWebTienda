@@ -1,4 +1,5 @@
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,6 +58,7 @@
                     <input  type="submit" text="Eviar" class="botonesFinales">
                 </div>
             </form>
+            <button onclick="window.location.href='Enfermedades.jsp';">Ver Enfermedades</button>
             
             
             
@@ -92,15 +94,6 @@
                 <input id="Cantidad" type="number"><br>
                 </div>
                 
-                <div>
-                <label for="estados">Estado de las plantas:</label>
-                <select id="estados">
-                    <option value="Necesita agua">Necesita agua</option>
-                    <option value="Necesita sol">Necesita sol</option>
-                     <option value="Necesita sombra">Necesita sombra</option>
-                    <option value="Contaminada">Contaminada</option>
-                </select><br>
-                </div>
                 
                 <div>
                 <label for="estado">Estado de los huertos:</label>
@@ -122,7 +115,7 @@
                     <input  type="submit" text="Eviar" class="botonesFinales">
                 </div>
             </form>
-            
+            <button onclick="window.location.href='Enfermedades.jsp';">Ver Enfermedades</button>
             
             
         </div>
