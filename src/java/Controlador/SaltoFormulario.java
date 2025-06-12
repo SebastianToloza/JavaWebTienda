@@ -42,7 +42,9 @@ public class SaltoFormulario extends HttpServlet {
             
     {
         HumedadData objHumedadData = new HumedadData();
-        ArrayList<String> listaDatos = new ArrayList<>();
+        ArrayList<String> listaDatosID = new ArrayList<>();
+        ArrayList<String> listaDatosFecha = new ArrayList<>();
+
         
         
         try {
@@ -52,20 +54,31 @@ public class SaltoFormulario extends HttpServlet {
         }
         
         try {
-            ResultSet rs = objHumedadData.getId();
+            ResultSet rsId = objHumedadData.getId();
+            ResultSet rsFecha = objHumedadData.getFecha();
 
-            while(rs.next()){
+            
+            while (rsId.next()) {
+
+                listaDatosID.add(rsId.getString("id_registro"));
+                System.out.println("Lista de IDs: " + listaDatosID);
+
+            }
+            
+            while(rsFecha.next()){
                 
-                listaDatos.add(rs.getString("id_registro"));
-                System.out.println("Lista de IDs: " + listaDatos);
+                listaDatosFecha.add(rsFecha.getString("fecha"));
+                System.out.println("Lista de IDs: " + listaDatosFecha);
                 
             }
         } catch (SQLException ex) {
             Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
         }
 ;
+        Object vector[]={listaDatosID,listaDatosFecha};
+        System.out.println(vector);
         HttpSession misession = request.getSession();
-        misession.setAttribute("datosTabla", listaDatos);
+        misession.setAttribute("datosTabla", vector);
 
         
         String accion = request.getParameter("eleccion");

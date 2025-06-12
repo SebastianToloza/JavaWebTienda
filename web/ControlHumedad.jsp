@@ -61,17 +61,17 @@
             </div>
             <div id="registros">
                 <form action="ControlHumedadRegistros" method="get" id="Buscador">
-                    <input>
+                    <input type="text" placeholder="Ingrese el id o Fecha">
                     <button>Buscar</button>
                 </form>
                 
                 <div id="registroConHumedad">
                     
                     <%
-                        ArrayList<String> datos = (ArrayList<String>) session.getAttribute("datosTabla");
+                        Object[] datos = (Object[]) session.getAttribute("datosTabla");
 
                         if (datos != null) {
-                            for (String id : datos) {
+                            for (Object id : datos) {
                     %>
                                 <div class="InformacionRegistro">
                                     <p>ID Registro: <%= id%></p>
