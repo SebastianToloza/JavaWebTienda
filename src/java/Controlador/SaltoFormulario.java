@@ -74,7 +74,7 @@ public class SaltoFormulario extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
         }
-;
+
         Object vector[]={listaDatosID,listaDatosFecha};
         System.out.println(vector);
         HttpSession misession = request.getSession();
