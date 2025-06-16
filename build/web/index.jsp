@@ -12,16 +12,16 @@
             <div id="header">
                 <h1>Control de corrales</h1>
             </div>
-            <form>
+    <form action="ControlCorrales" method="post">
                 
                 <div>
                 <label for="id">Identificador del corral</label>
-                <input type="text"  id="id" name="identificado"><br>
+                <input type="text"  id="id" name="identificador"><br>
                 </div>
                 
                 <div>
                 <label for="animales">Tipo de animales:</label>
-                <select id="animales">
+                <select id="animales" name="animal">
                     <option value="Pollos">Pollos</option>
                     <option value="Vacas">Vacas</option>
                     <option value="Caballos">Caballos</option>
@@ -35,12 +35,12 @@
                 
                 <div>
                 <label for="Cantidad">Cantidad de animales</label>
-                <input id="Cantidad" type="number"><br>
+                <input id="Cantidad" type="number" name="cantidades"><br>
                 </div>
                 
                 <div>
                 <label for="estado">Estado de los corrales:</label>
-                <select id="estado">
+                <select id="estado" name="estados">
                     <option value="Buen estado">Buen estado</option>
                     <option value="Mal estado">Mal estado</option>
                     <option value="En Mantenimiento">En Mantenimiento</option>
@@ -50,7 +50,7 @@
                 
                 <div>
                 <label for="fecha">Fecha de registro</label>
-                <input id="fecha" type="date"><br>
+                <input id="fecha" type="date" name="fechas"><br>
                 </div>
                 
                 <div id="boton">
@@ -68,16 +68,16 @@
             <div id="header">
                 <h1>Control de huertos</h1>
             </div>
-            <form>
+            <form action="ControlCorrales" method="post">
                 
                 <div>
                 <label for="id">Identificador del huerto</label>
-                <input type="text"  id="id" name="identificado"><br>
+                <input type="text"  id="id" name="identificador"><br>
                 </div>
                 
                 <div>
                 <label for="huerto">Tipo de huerto:</label>
-                <select id="huerto">
+                <select id="huerto" name="animal">
                     <option value="Huerto en cajoneras">Huerto en cajoneras</option>
                     <option value="Huerto colgantes">Huerto colgantes</option>
                     <option value="Huerto vertical">Huerto vertical</option>
@@ -91,13 +91,13 @@
                 
                 <div>
                 <label for="Cantidad">Cantidad de plantas</label>
-                <input id="Cantidad" type="number"><br>
+                <input id="Cantidad" type="number" name="cantidades"><br>
                 </div>
                 
                 
                 <div>
                 <label for="estado">Estado de los huertos:</label>
-                <select id="estado">
+                <select id="estado" name="estados">
                     <option value="Buen estado">Buen estado</option>
                     <option value="Mal estado">Mal estado</option>
                     <option value="En Mantenimiento">En Mantenimiento</option>
@@ -107,7 +107,7 @@
                 
                 <div>
                 <label for="fecha">Fecha de registro</label>
-                <input id="fecha" type="date"><br>
+                <input id="fecha" type="date" name="fechas"><br>
                 </div>
                 
                 <div id="boton">
