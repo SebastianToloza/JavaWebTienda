@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "SAlto", urlPatterns = {"/SAlto"})
+@WebServlet(name = "}Produccion", urlPatterns = {"/Produccion"})
 public class controladorRegistro extends HttpServlet {
 
     
@@ -21,10 +21,10 @@ public class controladorRegistro extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SAlto</title>");
+            out.println("<title>Servlet Produccion</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SAlto at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Produccion at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

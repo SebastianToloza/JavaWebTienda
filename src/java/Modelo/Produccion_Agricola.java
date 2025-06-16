@@ -1,4 +1,3 @@
-
 package Modelo;
 import java.sql.*;
 
@@ -29,24 +28,33 @@ public class Produccion_Agricola{
         }
     }
     
-    public ResultSet getCedula() throws SQLException{
-        String sqlText="SELECT cedula FROM persona";
+    
+    
+    public ResultSet getid() throws SQLException{
+        String sqlText="SELECT id FROM Registro_Produccion";
         Statement consultarSentencia =this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         
         return resultadoConsulta;
+    
+    
+    public ResultSet getNombre() throws SQLException {
+        String sqlText = "SELECT Nombre FROM Registro_Produccion";
+        Statement consultarSentencia = this.conex.createStatement();
+        this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
+        return this.resultadoConsulta;
     }
     
-    public ResultSet getCorreo() throws SQLException {
-        String sqlText = "SELECT correo	 FROM persona";
+    public ResultSet gettipo() throws SQLException {
+        String sqlText = "SELECT tipo FROM Registro_Produccion";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
         
     }
     
-    public ResultSet getContraseña() throws SQLException {
-        String sqlText = "SELECT contraseña FROM persona";
+    public ResultSet getCantidad() throws SQLException {
+        String sqlText = "SELECT Cantidad FROM Registro_Produccion";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta =consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -54,8 +62,8 @@ public class Produccion_Agricola{
     
     
     
-    public ResultSet getNombre() throws SQLException {
-        String sqlText = "SELECT nombre FROM persona";
+    public ResultSet getTamaño() throws SQLException {
+        String sqlText = "SELECT tamaño FROM Registro_Produccion";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -63,7 +71,7 @@ public class Produccion_Agricola{
 
     
     public boolean confirmarInformacionRegistro(int dato) throws SQLException{
-        String sqlText = "SELECT cedula	 FROM persona WHERE cedula = ?";
+        String sqlText = "SELECT id FROM Resgristro_Produccion WHERE id = ?";
         PreparedStatement consultarSentencia = this.conex.prepareStatement(sqlText);
         consultarSentencia.setInt(1, dato);
         this.resultadoConsulta = consultarSentencia.executeQuery();
@@ -72,11 +80,11 @@ public class Produccion_Agricola{
         
         
         if( this.resultadoConsulta.next()){
-            String cedulas =  this.resultadoConsulta.getString("cedula");
-            System.out.println(cedulas);
-            if (cedulas == null) {
+            String id =  this.resultadoConsulta.getString("id");
+            System.out.println(id);
+            if (id == null) {
                 return true;
-            } else if (cedulas.equals(dato)) {
+            } else if (id.equals(dato)) {
                 return false;
             } else {
                 return false;
@@ -87,15 +95,15 @@ public class Produccion_Agricola{
         }
     }
     
-    public boolean agregarUsuario(int cedula, String nombre,String correo,String contraseña) throws SQLException{
-        String textosql = "INSERT INTO persona(cedula, nombre, correo, contraseña) VALUES (?, ?, ?, ?)";
+    public boolean agregarUsuario(int id, String nombre, String tipo,String cantidad,String tamaño) throws SQLException{
+        String textosql = "INSERT INTO Registro_Produccion(id, nombre, tipo, cantiad, tamaño) VALUES (?, ?, ?, ?)";
         PreparedStatement modific = this.conex.prepareStatement(textosql);
-        modific.setInt(1, cedula);
-        modific.setString(2, nombre);
-        modific.setString(3, correo);
-        modific.setString(4, contraseña	);
-
-
+        modific.setInt(1, id);
+        modific.setString(2,nombre);
+        modific.setString(3,tipo );
+        modific.setString(4, cantidad);
+        modific.setString(5, tamaño);
+  
         int filasInsertadas = modific.executeUpdate();
 
         return  filasInsertadas>0;

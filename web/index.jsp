@@ -6,17 +6,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <div id="contenedotGeneral">
+        <div id="contenedorGeneral">
             
             <div id="registros">
                 <div id="barraBusqueda"></div>
-                <input>
+                <input type="text" name="query" placeholder="Buscar...">
                 <button type="submit" id="busqueda">Buscar</button>
+                <div id="datos">
+                    
+                </div>
+                
             </div>
 
             <div id="container">
                 <h1>Registro Producción Agrícola</h1>
                 <form action="procesar.jsp" method="post">
+                    <label for="id">Digite el id:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    
                     <label for="nombre">Digite el nombre:</label>
                     <input type="text" id="nombre" name="nombre">
 
@@ -28,9 +35,6 @@
 
                     <label for="tamaño">Digite el tamaño:</label>
                     <input type="text" id="tamaño" name="tamaño">
-
-                    <label for="descripcion">Digite la descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion">
 
                     <button type="submit" id="enviar">Registrar</button>
                 </form>
