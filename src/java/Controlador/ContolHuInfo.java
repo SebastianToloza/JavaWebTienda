@@ -57,11 +57,7 @@ public class ContolHuInfo extends HttpServlet {
             confirmador = objPersona.confirmarInformacionRegistro(identificador);
             System.out.println("Antes");
             if (confirmador) {
-                try {
                     objPersona.agregarRegistro(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
-                } catch (SQLException ex) {
-                    Logger.getLogger(ContolHuInfo.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }else{
                 System.out.println("hola");
             }

@@ -96,7 +96,8 @@ public class HumedadData {
                 return false;
             }
         
-        }else{
+        }else{ 
+            
             return true;
         }
     }
