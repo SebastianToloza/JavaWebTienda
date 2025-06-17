@@ -45,7 +45,7 @@ import java.sql.*;
     }
     
     public ResultSet getanimal() throws SQLException {
-        String sqlText = "SELECT Establo/Huerto FROM monitoreo_huertos_corrales";
+        String sqlText = "SELECT Establos FROM monitoreo_huertos_corrales";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -102,7 +102,7 @@ import java.sql.*;
     }
     
     public boolean agregarUsuario(int id, String animales,int cantidad, String estado, String fecha) throws SQLException{
-        String textosql = "INSERT INTO monitoreo_huertos_corrales(id, Establo/Huerto, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
+        String textosql = "INSERT INTO monitoreo_huertos_corrales(id, Establos, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement modific = this.conex.prepareStatement(textosql);
         modific.setInt(1, id);
         modific.setString(2, animales);
