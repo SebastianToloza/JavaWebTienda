@@ -44,20 +44,23 @@ body{
     border-radius: 1px;
     background-color: green;
 }
+#enviar:hover{
+    background-color: gray;
+}
 
 label{
     display: flex;
     align-self: start;
 }
 
-h1{
-    color: blue;
-    padding: 5%;
-    margin: 5px;
-    font-family: arial, sans-serif;
-    font-size: 25px;
-    background-color: green;
-    border-radius: 3%;
+h1 {
+   color: blue;
+   padding: 5%;
+   margin: 5px;
+   font-family: arial, sans-serif;
+   font-size: 25px;
+   background-color: green;
+   border-radius: 3%;
 }
 
 #registros{
@@ -65,26 +68,29 @@ h1{
     background-color: yellow;
     width: 85%;
     margin-top: auto;
-    height: 900px;                                                                      
+    height: 600px;                                                                      
 }
 
 #barraBusqueda{
     display: flex;
     align-items: center;
 }
- input {
-      padding: 8px;
-      font-size: 16px;
+
+input{
+    padding: 5px;
+    font-size: 15px;
  }
         
 busqueda{
-     padding: 8px 12px;
-     font-size: 16px;
+    padding: 8px;
+    font-size: 16px;
 }
+
 #datos{
     display: flex;
     background-color: brown;
     justify-content: space-around;  
+    border: 1px solid black;
 }
 
 

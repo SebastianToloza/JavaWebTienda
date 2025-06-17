@@ -1,4 +1,5 @@
 package Modelo;
+import jakarta.websocket.Decoder;
 import java.sql.*;
 
 
@@ -30,22 +31,21 @@ public class Produccion_Agricola{
     
     
     
-    public ResultSet getid() throws SQLException{
+    public ResultSet getId() throws SQLException{
         String sqlText="SELECT id FROM Registro_Produccion";
         Statement consultarSentencia =this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
-        
         return resultadoConsulta;
+    }
     
-    
-    public ResultSet getNombre() throws SQLException {
+    public ResultSet getNombre() throws SQLException{
         String sqlText = "SELECT Nombre FROM Registro_Produccion";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
     }
     
-    public ResultSet gettipo() throws SQLException {
+    public ResultSet getTipo() throws SQLException {
         String sqlText = "SELECT tipo FROM Registro_Produccion";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
@@ -59,9 +59,7 @@ public class Produccion_Agricola{
         this.resultadoConsulta =consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
     }   
-    
-    
-    
+   
     public ResultSet getTamaño() throws SQLException {
         String sqlText = "SELECT tamaño FROM Registro_Produccion";
         Statement consultaSentencia = this.conex.createStatement();
@@ -69,7 +67,6 @@ public class Produccion_Agricola{
         return this.resultadoConsulta;
     }
 
-    
     public boolean confirmarInformacionRegistro(int dato) throws SQLException{
         String sqlText = "SELECT id FROM Resgristro_Produccion WHERE id = ?";
         PreparedStatement consultarSentencia = this.conex.prepareStatement(sqlText);
@@ -95,14 +92,14 @@ public class Produccion_Agricola{
         }
     }
     
-    public boolean agregarUsuario(int id, String nombre, String tipo,String cantidad,String tamaño) throws SQLException{
+    public boolean agregarUsuario(int id, String nombre, String tipo,String cantidad,int tamaño) throws SQLException{
         String textosql = "INSERT INTO Registro_Produccion(id, nombre, tipo, cantiad, tamaño) VALUES (?, ?, ?, ?)";
         PreparedStatement modific = this.conex.prepareStatement(textosql);
         modific.setInt(1, id);
         modific.setString(2,nombre);
         modific.setString(3,tipo );
         modific.setString(4, cantidad);
-        modific.setString(5, tamaño);
+        modific.setInt(5, tamaño);
   
         int filasInsertadas = modific.executeUpdate();
 
