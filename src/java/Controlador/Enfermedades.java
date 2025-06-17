@@ -1,7 +1,7 @@
 
 package Controlador;
 
-import Modelo.Datehuertos_corrales;
+import Modelo.Date_enfermedades;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -16,8 +16,8 @@ import java.util.logging.Level;
  *
  * @author SENA
  */
-@WebServlet(name = "ControlCorrales", urlPatterns = {"/ControlCorrales"})
-public class ControlCorrales extends HttpServlet {
+@WebServlet(name = "Enfermedades", urlPatterns = {"/Enfermedades"})
+public class Enfermedades extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -51,13 +51,13 @@ public class ControlCorrales extends HttpServlet {
         System.out.println("Hola");
         
                 int identificador = Integer.parseInt(request.getParameter("identificador"));
-                String tipoEntidad = request.getParameter("animal");
+                String tipoEntidad = request.getParameter("enfermedades");
                 int nivelHumedad = Integer.parseInt(request.getParameter("cantidades"));
                 String tipoHumedad = request.getParameter("estados");
                 String fecha = request.getParameter("fechas");
 
                 boolean confirmador = true;
-                Datehuertos_corrales objDatoCorral = new Datehuertos_corrales();
+                Date_enfermedades objDatoCorral = new Date_enfermedades();
 
                 try {
                     objDatoCorral.hacerConexion();
@@ -79,3 +79,5 @@ public class ControlCorrales extends HttpServlet {
     }// </editor-fold>
 
 }
+
+

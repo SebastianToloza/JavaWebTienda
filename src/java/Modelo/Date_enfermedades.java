@@ -1,8 +1,9 @@
+
 package Modelo;
 import java.sql.*;
 
 
-   public class Datehuertos_corrales {
+   public class Date_enfermedades {
     public String usuario;
     public String url;
     public String clave;
@@ -10,7 +11,7 @@ import java.sql.*;
     public ResultSet resultadoConsulta;
     
     
-    public Datehuertos_corrales(){
+    public Date_enfermedades(){
         this.usuario = "root";
         this.url = "jdbc:mysql://localhost:3306/registro_agricola?zeroDateTimeBehavior=CONVERT_TO_NULL";
         this.clave = "";
@@ -37,15 +38,15 @@ import java.sql.*;
     }
     
     public ResultSet getid() throws SQLException{
-        String sqlText="SELECT id FROM monitoreo_huertos_corrales";
+        String sqlText="SELECT id FROM registro_enfermedades";
         Statement consultarSentencia =this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         
         return resultadoConsulta;
     }
     
-    public ResultSet getanimal() throws SQLException {
-        String sqlText = "SELECT Establo/Huerto FROM monitoreo_huertos_corrales";
+    public ResultSet getenfermedad() throws SQLException {
+        String sqlText = "SELECT enfermedad FROM registro_enfermedades";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -53,7 +54,7 @@ import java.sql.*;
     }
     
     public ResultSet getCantidad() throws SQLException {
-        String sqlText = "SELECT cantidad FROM monitoreo_huertos_corrales";
+        String sqlText = "SELECT Cantidad FROM registro_enfermedades";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta =consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -62,14 +63,14 @@ import java.sql.*;
     
     
     public ResultSet getestado() throws SQLException {
-        String sqlText = "SELECT estado FROM monitoreo_huertos_corrales";
+        String sqlText = "SELECT estado FROM registro_enfermedades";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
     }
     
         public ResultSet getfecha() throws SQLException {
-        String sqlText = "SELECT fecha FROM monitoreo_huertos_corrales";
+        String sqlText = "SELECT fecha FROM registro_enfermedades";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -77,7 +78,7 @@ import java.sql.*;
 
     
     public boolean confirmarInformacionRegistro(int dato) throws SQLException{
-        String sqlText = "SELECT id FROM monitoreo_huertos_corrales WHERE id = ?";
+        String sqlText = "SELECT id FROM registro_enfermedades WHERE id = ?";
         PreparedStatement consultarSentencia = this.conex.prepareStatement(sqlText);
         consultarSentencia.setInt(1, dato);
         this.resultadoConsulta = consultarSentencia.executeQuery();
@@ -101,12 +102,12 @@ import java.sql.*;
         }
     }
     
-    public boolean agregarUsuario(int id, String animales,int cantidad, String estado, String fecha) throws SQLException{
-        String textosql = "INSERT INTO monitoreo_huertos_corrales(id, Establo/Huerto, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
+    public boolean agregarUsuario(int id, String enfermedad,int Cantidad, String estado, String fecha) throws SQLException{
+        String textosql = "INSERT INTO registro_enfermedades(id, enfermedad, Cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement modific = this.conex.prepareStatement(textosql);
         modific.setInt(1, id);
-        modific.setString(2, animales);
-        modific.setInt(3, cantidad);
+        modific.setString(2, enfermedad);
+        modific.setInt(3, Cantidad);
         modific.setString(4, estado);
         modific.setString(5, fecha);
 
@@ -119,3 +120,4 @@ import java.sql.*;
 
    
 }
+

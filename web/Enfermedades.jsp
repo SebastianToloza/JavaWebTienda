@@ -12,16 +12,16 @@
             <div id="header">
                 <h1>Enfermedades Animales</h1>
             </div>
-            <form>
+            <form action="Enfermedades" method="post">
                 
                 <div>
                 <label for="id">Identificador de enfermedades</label>
-                <input type="text"  id="id" name="identificado"><br>
+                <input type="text"  id="id" name="identificador"><br>
                 </div>
                 
                 <div>
                 <label for="enfermedad">Tipo de enfermerdad:</label>
-                <select id="enfermedad">
+                <select id="enfermedad" name="enfermedades">
                     <option value="Infecciones respiratorias">Infecciones respiratorias</option>
                     <option value="Gastrointestinales">Gastrointestinales</option>
                     <option value="Parasitarias">Parasitarias</option>
@@ -35,12 +35,12 @@
                 
                 <div>
                 <label for="Cantidad">Cantidad de animales enfermos</label>
-                <input id="Cantidad" type="number"><br>
+                <input id="Cantidad" type="number" name="cantidades"><br>
                 </div>
                 
                 <div>
                 <label for="estado">Estado del animal:</label>
-                <select id="estado">
+                <select id="estado" name="estados">
                     <option value="Estable">Estable</option>
                     <option value="Delicado">Delicado</option>
                     <option value="Grave">Grave</option>
@@ -51,7 +51,7 @@
                 
                 <div>
                 <label for="fecha">Fecha de registro</label>
-                <input id="fecha" type="date"><br>
+                <input id="fecha" type="date" name="fechas"><br>
                 </div>
                 
                 <div id="boton">
@@ -67,16 +67,16 @@
             <div id="header">
                 <h1>Enfermedades Plantas</h1>
             </div>
-            <form>
+              <form action="Enfermedades" method="post">
                 
                 <div>
                 <label for="id">Identificador de enfermedades</label>
-                <input type="text"  id="id" name="identificado"><br>
+                <input type="text"  id="id" name="identificador"><br>
                 </div>
                 
                 <div>
                 <label for="huerto">Tipo de enfermedad:</label>
-                <select id="huerto">
+                <select id="huerto" name="enfermedades">
                     <option value="Enfermedades por hongos">Enfermedades por hongos</option>
                     <option value="Enfermedades por bacterias">Enfermedades por bacterias</option>
                     <option value="Enfermedades por virus">Enfermedades por virus</option>
@@ -90,12 +90,12 @@
                 
                 <div>
                 <label for="Cantidad">Cantidad de plantas Enfermas</label>
-                <input id="Cantidad" type="number"><br>
+                <input id="Cantidad" type="number" name="cantidades"><br>
                 </div>
                 
                 <div>
-                <label for="estados">Estado de las plantas:</label>
-                <select id="estados">
+                <label for="estado">Estado de las plantas:</label>
+                <select id="estado" name="estados">
                     <option value="Sana">Sana</option>
                     <option value="Estresada">Estresada</option>
                      <option value="Enferma">Enferma</option>
@@ -105,7 +105,7 @@
                 
                 <div>
                 <label for="fecha">Fecha de registro</label>
-                <input id="fecha" type="date"><br>
+                <input id="fecha" type="date" name="fechas"><br>
                 </div>
                 
                 <div id="boton">
