@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import Modelo.HumedadData;
+import Modelo.Sql.HumedadData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

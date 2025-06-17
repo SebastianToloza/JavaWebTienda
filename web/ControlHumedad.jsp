@@ -31,7 +31,6 @@
                     </div>
 
 
-
                     <div>
                         <label for="nvHumedad">Nivel de humedad</label>
                         <input id="nvHumedad" type="number" value="1" min="1" name="nivelHumedad"  required><br>
@@ -96,7 +95,8 @@
             
             
         </div>
-        
-        
+                    <script src="InteractHum.js">
+                        
+                    
     </body>
 </html>
