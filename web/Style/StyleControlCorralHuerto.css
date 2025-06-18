@@ -79,6 +79,25 @@ form label{
     
 }
 
+.caballito{
+    position: absolute;
+    top: 50px;
+    left:600px;
+    animation: animatepumpkin 8s ease-in-out infinite;
+    width:12%;
+    
+}
+
+@keyframes animatepumpkin{
+    0%,100%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(400px);
+}
+
+}
+
 
 /*-----------------Animciones-----------------*/
 input:hover{

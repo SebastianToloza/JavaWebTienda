@@ -8,6 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+         <img src="Caballo.png" class="caballito">
 <div id="contenedor">
             <div id="header">
                 <h1>Control de corrales</h1>
