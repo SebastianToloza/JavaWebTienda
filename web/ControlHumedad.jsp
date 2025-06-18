@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Style/StyleControlHumedad.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
     </head>
     <body>
         
@@ -95,7 +96,7 @@
             
             
         </div>
-                    <script src="InteractHum.js">
+        <script src="<%= request.getContextPath() %>/Interacciones/InteractHum.js" defer></script>
                         
                     
     </body>
