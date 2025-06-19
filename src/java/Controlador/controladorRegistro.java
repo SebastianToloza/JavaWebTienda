@@ -64,38 +64,6 @@ public class RegistroProduccion extends HttpServlet {
            
         processRequest(request, response);
     }
-    protected void doPost2(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String accion = request.getParameter("Eleccion");
-        System.out.println("Hola");
-        
-                int identificador = Integer.parseInt(request.getParameter("identificador"));
-                String tipoEntidad = request.getParameter("huerto");
-                int nivelHumedad = Integer.parseInt(request.getParameter("cantidades"));
-                String tipoHumedad = request.getParameter("estados");
-                String fecha = request.getParameter("fechas");
-
-                boolean confirmador = true;
-                Produccion_Agricola objDatoHuerto = new Produccion_Agricola();
-        try {
-            objDatoHuerto.hacerConexion();
-        } catch (SQLException ex) {
-            Logger.getLogger(RegistroProduccion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-                try {
-                    confirmador = objDatoHuerto.confirmarInformacionRegistro(identificador);
-                    if (confirmador) {
-                        objDatoHuerto.agregarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
-                    } else {
-                        System.out.println("HOla");
-                    }
-                } catch (SQLException ex) {
-                }
-           
-        processRequest(request, response);
-    }
-
 
     @Override
     public String getServletInfo() {
