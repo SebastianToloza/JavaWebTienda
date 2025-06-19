@@ -11,7 +11,9 @@
          <img src="Caballo.png" class="caballito">
 <div id="contenedor">
             <div id="header">
+                   <img src="Cerdo.webp" class="Cerdito">
                 <h1>Control de corrales</h1>
+                <img src="Chivo.png" class="Chivito">
             </div>
     <form action="ControlCorrales" method="post">
                 
@@ -67,7 +69,9 @@
     <body>
 <div id="contenedores">
             <div id="header">
+                <img src="Mazorca.png" class="Mazorquita">
                 <h1>Control de huertos</h1>
+                <img src="Tomate.png" class="Tomatito">
             </div>
             <form action="ControlCorrales" method="post">
                 

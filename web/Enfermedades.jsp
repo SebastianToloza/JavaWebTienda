@@ -8,9 +8,12 @@
         <title>JSP Page</title>
     </head>
     <body>
+           <img src="Caballo.png" class="caballito">
         <div id="contenedor">
             <div id="header">
+                 <img src="Vaca.png" class="Vaquita">
                 <h1>Enfermedades Animales</h1>
+                 <img src="Vaca.png" class="Vaquita2">
             </div>
             <form action="Enfermedades" method="post">
                 
@@ -65,7 +68,9 @@
     <body>
 <div id="contenedores">
             <div id="header">
+                  <img src="Planta.png" class="Plantita">
                 <h1>Enfermedades Plantas</h1>
+                  <img src="Planta.png" class="Plantita2">
             </div>
               <form action="Enfermedades" method="post">
                 

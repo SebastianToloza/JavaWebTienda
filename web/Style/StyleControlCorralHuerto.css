@@ -98,6 +98,44 @@ form label{
 
 }
 
+.Cerdito{
+    position: absolute;
+    top:0%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    width:10%;
+    height: 15%;
+    left:4%;
+}
+
+
+.Chivito{
+    position: absolute;
+    top:1.8%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    left:41%;
+    height: 11%;
+}
+
+.Mazorquita{
+    position: absolute;
+    top:1.8%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    left:55%;
+    height: 11%;
+}
+
+.Tomatito{
+    position: absolute;
+    top:1.8%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    left:89.5%;
+    height: 11%;
+}
+
 
 /*-----------------Animciones-----------------*/
 input:hover{
