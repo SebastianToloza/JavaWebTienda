@@ -115,24 +115,4 @@ import java.sql.*;
         return  filasInsertadas>0;
     
     }
-    public boolean agregarUsuario2(int id, String huerto,int cantidad, String estado, String fecha) throws SQLException{
-        String textosql = "INSERT INTO iregistro_produccion(id, huerto, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
-        PreparedStatement modific = this.conex.prepareStatement(textosql);
-        modific.setInt(1, id);
-        modific.setString(2, huerto);
-        modific.setInt(3, cantidad);
-        modific.setString(4, estado);
-        modific.setString(5, fecha);
-
-
-        int filasInsertadas = modific.executeUpdate();
-
-        return  filasInsertadas>0;
-    
-    }
-
- 
-    public boolean confirmarInformacionRegistro(int identificador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
