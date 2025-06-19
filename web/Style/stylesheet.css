@@ -1,5 +1,5 @@
 #header{
-    background-color: grey;
+    background-color: yellow;
   
 }
 h1{
@@ -10,7 +10,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-image: url("https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg");
+   background-image: url("https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg");
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -76,13 +76,14 @@ form label{
 .botonesFinales{
     width: 15vw;
     height: 5vh;
+    background-color: blue;
     
 }
 
 .caballito{
     position: absolute;
     top: 50px;
-    left:655px;
+    left:658px;
     animation: animatepumpkin 8s ease-in-out infinite;
     width:12%;
     
