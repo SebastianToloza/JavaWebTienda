@@ -7,7 +7,7 @@
             console.log('Click en:', div.textContent);
             const idText = div.querySelector('p').textContent;
             const id = idText.split(':')[1].trim();
-            console.log(id);x
+            console.log("esto"+id);
             fetch(`/JavaWebTienda22/EdicionHum?id=${encodeURIComponent(id)}`)
                 .then(response => response.json())
                 .then(data => {

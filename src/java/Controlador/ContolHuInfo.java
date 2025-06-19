@@ -59,7 +59,7 @@ public class ContolHuInfo extends HttpServlet {
             if (confirmador) {
                     objPersona.agregarRegistro(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
             }else{
-                System.out.println("hola");
+                System.out.println("Error eso ya existe");
             }
 
         } catch (SQLException ex) {

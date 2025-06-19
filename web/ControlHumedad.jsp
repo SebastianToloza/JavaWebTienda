@@ -69,7 +69,6 @@
                     
                     <%
                         Object[] datos = (Object[]) session.getAttribute("datosTabla");
-                        System.out.println("HOLaaa"+datos[1]);
                         if (datos != null) {
                             ArrayList<String> listaID = (ArrayList<String>) datos[0];
                             ArrayList<String> listaFecha = (ArrayList<String>) datos[1];

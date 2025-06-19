@@ -75,36 +75,34 @@ import Modelo.ModeloHumedad;
         }
 
 
+   
+        
+       
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        public List<ModeloHumedad> obtenerTodasHumedades() throws SQLException {
-            List<ModeloHumedad> listaHumedades = new ArrayList<>();
-            String sql = "SELECT * FROM control_humedad";
-            Statement stmt = this.conex.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+        public List<Object> obtenerTodasHumedades(int valor) throws SQLException {
+            List<Object> listaHumedades = new ArrayList<>();
+            String sql = "SELECT * FROM consultaSentencia WHERE id_registro = ?";
+            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
+            consultaSentencia.setInt(1, valor);
 
-            while (rs.next()) {
-                int id = rs.getInt("id_registro");
-                String tipoEntidad = rs.getString("tipo_entidad");
-                double nivelHumedad = rs.getDouble("nivel_humedad");
-                String tipoHumedad = rs.getString("tipo_humedad");
-                String fecha = rs.getString("fecha");
+            while (this.resultadoConsulta.next()) {
+                int id = this.resultadoConsulta.getInt("id_registro");
+                String tipoEntidad = this.resultadoConsulta.getString("tipo_entidad");
+                double nivelHumedad = this.resultadoConsulta.getDouble("nivel_humedad");
+                String tipoHumedad = this.resultadoConsulta.getString("tipo_humedad");
+                String fecha = this.resultadoConsulta.getString("fecha");
 
-                ModeloHumedad h = new ModeloHumedad(id, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
-                listaHumedades.add(h);
+                listaHumedades.add(id);
+                listaHumedades.add(tipoEntidad);
+                listaHumedades.add(nivelHumedad);
+                listaHumedades.add(tipoHumedad);
+                listaHumedades.add(fecha);
+
             }
-            rs.close();
-            stmt.close();
+            System.out.println(listaHumedades);
+            this.resultadoConsulta.close();
+            consultaSentencia.close();
 
             return listaHumedades;
         }
@@ -116,12 +114,10 @@ import Modelo.ModeloHumedad;
             consultarSentencia.setInt(1, dato);
             this.resultadoConsulta = consultarSentencia.executeQuery();
 
-            System.out.println(consultarSentencia);
 
 
             if( this.resultadoConsulta.next()){
                 String cedulas =  this.resultadoConsulta.getString("id_registro");
-                System.out.println(cedulas);
                 if (cedulas == null) {
                     return true;
                 } else if (cedulas.equals(dato)) {

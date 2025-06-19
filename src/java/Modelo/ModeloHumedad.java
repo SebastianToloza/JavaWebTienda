@@ -7,7 +7,6 @@ public class ModeloHumedad {
     private String tipoHumedad;
     private String fecha;
 
-    // Constructor
     public ModeloHumedad(int idRegistro, String tipoEntidad, double nivelHumedad, String tipoHumedad, String fecha) {
         this.idRegistro = idRegistro;
         this.tipoEntidad = tipoEntidad;
@@ -16,7 +15,6 @@ public class ModeloHumedad {
         this.fecha = fecha;
     }
 
-    // Getters y Setters
     public int getIdRegistro() {
         return idRegistro;
     }
