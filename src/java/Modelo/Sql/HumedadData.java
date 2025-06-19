@@ -20,6 +20,7 @@ import Modelo.ModeloHumedad;
         public void hacerConexion () throws SQLException{
 
             try {
+                
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
