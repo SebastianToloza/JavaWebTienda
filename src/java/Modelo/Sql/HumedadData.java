@@ -80,11 +80,14 @@ import Modelo.ModeloHumedad;
        
         
         
-        public List<Object> obtenerTodasHumedades(int valor) throws SQLException {
-            List<Object> listaHumedades = new ArrayList<>();
+        public ArrayList<Object> obtenerTodasHumedades(int valor) throws SQLException {
+            ArrayList<Object> listaHumedades = new ArrayList<>();
             String sql = "SELECT * FROM consultaSentencia WHERE id_registro = ?";
             PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
             consultaSentencia.setInt(1, valor);
+            
+            this.resultadoConsulta = consultaSentencia.executeQuery();
+            System.out.println("EL REsultSet"+consultaSentencia);
 
             while (this.resultadoConsulta.next()) {
                 int id = this.resultadoConsulta.getInt("id_registro");
@@ -92,15 +95,16 @@ import Modelo.ModeloHumedad;
                 double nivelHumedad = this.resultadoConsulta.getDouble("nivel_humedad");
                 String tipoHumedad = this.resultadoConsulta.getString("tipo_humedad");
                 String fecha = this.resultadoConsulta.getString("fecha");
+                
+                System.out.println("El id qva a qui"+id);
 
                 listaHumedades.add(id);
                 listaHumedades.add(tipoEntidad);
                 listaHumedades.add(nivelHumedad);
                 listaHumedades.add(tipoHumedad);
                 listaHumedades.add(fecha);
-
             }
-            System.out.println(listaHumedades);
+            System.out.println("la fuckin lista"+listaHumedades);
             this.resultadoConsulta.close();
             consultaSentencia.close();
 
@@ -133,7 +137,6 @@ import Modelo.ModeloHumedad;
         }
 
         public boolean agregarRegistro(int id_registro, String tipo_entidad, double nivel_humedad, String tipo_humedad, String fecha) throws SQLException{
-            System.out.println("hola");
             String textosql = "INSERT INTO control_humedad(id_registro, tipo_entidad, nivel_humedad, tipo_humedad, fecha) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement modific = this.conex.prepareStatement(textosql);
             modific.setInt(1, id_registro);

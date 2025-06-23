@@ -61,14 +61,12 @@ public class SaltoFormulario extends HttpServlet {
             while (rsId.next()) {
 
                 listaDatosID.add(rsId.getString("id_registro"));
-                System.out.println("Lista de IDs: " + listaDatosID);
 
             }
             
             while(rsFecha.next()){
                 
                 listaDatosFecha.add(rsFecha.getString("fecha"));
-                System.out.println("Lista de IDs: " + listaDatosFecha);
                 
             }
         } catch (SQLException ex) {
