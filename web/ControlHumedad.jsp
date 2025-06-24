@@ -61,8 +61,7 @@
             </div>
             <div id="registros">
                 <form action="ControlHumedadRegistros" method="get" id="Buscador">
-                    <input type="text" placeholder="Ingrese el id o Fecha">
-                    <button>Buscar</button>
+                    <input id="barraBuscador" type="text" placeholder="Ingrese el id o Fecha">
                 </form>
                 
                 <div id="registroConHumedad">
@@ -77,11 +76,12 @@
                             <div class="ContenerdExt">
                                 <div class="InformacionRegistro">
                                     <p>ID Registro: <%=listaID.get(i) %> </p>
-                                    <p>Fecha de registro <%=listaFecha.get(i)%></p>
+                                    <p>Fecha de registro: <%=listaFecha.get(i)%></p>
                                     
                                     
                                 </div>
-                                    <img class="Eliminar" src="Imagenes/Basurero.png">
+                                  
+                                        <img class="Eliminar" src="Imagenes/Basurero.png">
                             </div>
 
                     <%
@@ -99,8 +99,9 @@
             
             
         </div>
+        <script src="<%= request.getContextPath()%>/Interacciones/InteractHum.js" defer></script>
         <script src="<%= request.getContextPath() %>/Interacciones/InteractHum.js" defer></script>
                         
                     
-    </body>
+    </body> 
 </html>

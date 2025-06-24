@@ -90,18 +90,10 @@ form label{
     
 }
 #Buscador input{
-    width: 75%;
+    width: 95%;
     height: 6vh;
     border:  none;
-    border-radius: 20px 0px 0px 20px;
-}
-#Buscador button{
-    width: 20%;
-    height: 6vh;
-    border-radius: 0px 60px 60px  0px;
-
-
-    
+    border-radius: 20px 20px 20px 20px;
 }
 
 #registroConHumedad{
