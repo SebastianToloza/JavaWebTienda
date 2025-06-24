@@ -73,12 +73,16 @@
                             ArrayList<String> listaID = (ArrayList<String>) datos[0];
                             ArrayList<String> listaFecha = (ArrayList<String>) datos[1];
                             for (int i = 0 ; i<listaID.size() ; i++) {
-                    %>
+                            %>  
+                            <div class="ContenerdExt">
                                 <div class="InformacionRegistro">
                                     <p>ID Registro: <%=listaID.get(i) %> </p>
                                     <p>Fecha de registro <%=listaFecha.get(i)%></p>
-                                    <img class="Eliminar" src="Imagenes/Basurero.png">
+                                    
+                                    
                                 </div>
+                                    <img class="Eliminar" src="Imagenes/Basurero.png">
+                            </div>
 
                     <%
                             }

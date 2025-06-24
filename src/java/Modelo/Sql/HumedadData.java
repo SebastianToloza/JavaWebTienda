@@ -82,7 +82,7 @@ import Modelo.ModeloHumedad;
         
         public ArrayList<Object> obtenerTodasHumedades(int valor) throws SQLException {
             ArrayList<Object> listaHumedades = new ArrayList<>();
-            String sql = "SELECT * FROM consultaSentencia WHERE id_registro = ?";
+            String sql = "SELECT * FROM control_humedad WHERE id_registro = ?";
             PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
             consultaSentencia.setInt(1, valor);
             
@@ -111,6 +111,26 @@ import Modelo.ModeloHumedad;
             return listaHumedades;
         }
         
+        
+        
+        
+        public void actualizarUsuario(int id_registro, String tipo_entidad, double nivel_humedad, String tipo_humedad, String fecha) {
+            String sql = "UPDATE control_humedad SET tipo_entidad = ?, nivel_humedad = ?, tipo_humedad = ?, fecha= ? WHERE id_registro = ?";
+
+            try (PreparedStatement consultaSentencia= this.conex.prepareStatement(sql)) {
+                consultaSentencia.setString(1, tipo_entidad);
+                consultaSentencia.setDouble(2, nivel_humedad );
+                consultaSentencia.setString(3, tipo_humedad);
+                consultaSentencia.setString(4, fecha);
+                consultaSentencia.setInt(5, id_registro);
+
+                int filasAfectadas = consultaSentencia.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         
         public boolean confirmarInformacionRegistro(int dato) throws SQLException{
             String sqlText = "SELECT id_registro FROM control_humedad WHERE id_registro = ?";
@@ -151,4 +171,20 @@ import Modelo.ModeloHumedad;
             return  filasInsertadas>0;
 
         }
-    }
+        public boolean eliminarPorId(int id) {
+        String sql = "DELETE FROM control_humedad WHERE id_registro = ?";
+        boolean opcion =true;
+        try (PreparedStatement consultarSentencia = this.conex.prepareStatement(sql)) {
+            consultarSentencia.setInt(1, id);
+
+           int filasAfectadas = consultarSentencia.executeUpdate();
+            opcion = filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return opcion;
+    }   
+}
+    
+
+
