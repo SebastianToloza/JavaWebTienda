@@ -7,41 +7,108 @@
         <title>Registro Producción Agrícola</title>
     </head>
     <body>
-        <div id="contenedorGeneral">
-            
-            <div id="registros">
-                <h2>Buscar Registros</h2>
-                <form action="buscar.jsp" method="get" id="barraBusqueda">
-                    <input type="text" name="query" placeholder="Buscar..." required>
-                    <button type="submit" id="busqueda">Buscar</button>
-                </form>
-                <div id="datos">
-                    <!-- Aquí se cargarán los datos filtrados -->
+        <img src="Caballo.png" class="caballito">
+        <div class="registro">
+            <div id="buscador">
+                <input type="text" id="id" name="buscador" >
+                 <input  type="submit" text="buscar" class="busqueda">
+            </div>
+        </div>
+<div id="contenedor">
+            <div id="header">
+                <h1>Produccion de Corrales</h1>
+            </div>
+    <form action="RegistroProduccion" method="post">
+                
+                <div>
+                <label for="id">Identificador de produccion: </label>
+                <input type="text"  id="id" name="identificador"><br>
                 </div>
+                
+                <div>
+                <label for="animales">Tipo de animales:</label>
+                <select id="animales" name="animal">
+                    <option value="Pollos">Pollos</option>
+                    <option value="Vacas">Vacas</option>
+                    <option value="Ovejas">Ovejas</option>
+                    <option value="Conejos">Conejos</option>
+                </select><br>
+                
+                </div>
+                
+                <div>
+                <label for="Cantidad">Cantidad de Produccion: </label>
+                <input id="Cantidad" type="number" name="cantidades"><br>
+                </div>
+                
+                <div>
+                <label for="estado">Estado de la produccion:</label>
+                <select id="estado" name="estados">
+                    <option value="Buen estado">Buen estado</option>
+                    <option value="Mal estado">Mal estado</option>
+                </select><br>
+                </div>
+                
+                <div>
+                <label for="fecha">Fecha de registro: </label>
+                <input id="fecha" type="date" name="fechas"><br>
+                </div>
+                
+                <div id="boton">
+                    <input  type="submit" text="Guardar" class="botonesFinales">
+                    <input  type="submit" text="Eviar" class="botonesFinales">
+                </div>
+            </form>
+           
+        </div>
+    <body>
+<div id="contenedores">
+            <div id="header">
+                <h1>Produccion de huertos</h1>
             </div>
-
-            <div id="container">
-                <h1>Registro Producción Agrícola</h1>
-                <form action="procesar.jsp" method="post">
-                    <label for="id">Digite el id: </label>
-                    <input type="text" id="id" name="id" required>
-                    
-                    <label for="nombre">Digite el nombre: </label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="tipo">Digite el tipo: </label>
-                    <input type="text" id="tipo" name="tipo" required>
-
-                    <label for="cantidad">Digite la cantidad: </label>
-                    <input type="text" id="cantidad" name="cantidad" required>
-
-                    <label for="tamaño">Digite el tamaño: </label>
-                    <input type="text" id="tamaño" name="tamaño" required>
-
-                    <button type="submit" id="enviar">Registrar</button>
-                </form>
-            </div>
-            
+            <form action="RegistroProduccion" method="post">
+                
+                <div>
+                <label for="id">Identificador de produccion: </label>
+                <input type="text"  id="id" name="identificador"><br>
+                </div>
+                
+                <div>
+                <label for="huerto">Tipo de huerto:</label>
+                <select id="huerto" name="animal">
+                    <option value="Cilantro">Cilantro</option>
+                    <option value="Tomate">Tomate</option>
+                    <option value="Papa">Papa</option>
+                    <option value="Yuca">Yuca</option>
+                    <option value="Pimenton">Pimenton</option>
+                </select><br>
+                
+                </div>
+                
+                <div>
+                <label for="Cantidad">Cantidad de produccion: </label>
+                <input id="Cantidad" type="number" name="cantidades"><br>
+                </div>
+                
+                <div>
+                <label for="estado">Estado de la produccion:</label>
+                <select id="estado" name="estados">
+                    <option value="Buen estado">Buen estado</option>
+                    <option value="Mal estado">Mal estado</option>
+                </select><br>
+                </div>
+                
+                <div>
+                <label for="fecha">Fecha de registro: </label>
+                <input id="fecha" type="date" name="fechas"><br>
+                </div>
+                
+                <div id="boton">
+                    <input  type="submit" text="Guardar" class="botonesFinales">
+                    <input  type="submit" text="Eviar" class="botonesFinales">
+                </div>
+            </form>
+           
         </div>
     </body>
 </html>
