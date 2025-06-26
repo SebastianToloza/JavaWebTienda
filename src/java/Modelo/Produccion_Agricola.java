@@ -1,5 +1,6 @@
 package Modelo;
 import java.sql.*;
+import java.util.ArrayList;
 
 
    public class Produccion_Agricola {
@@ -116,6 +117,72 @@ import java.sql.*;
         return  filasInsertadas>0;
     
     }
+    
+    /*.-------------- faltan cosistas :< --------------*/
+    public ArrayList<Object> obtenerTodasHumedades(int valor) throws SQLException {
+            ArrayList<Object> listaHumedades = new ArrayList<>();
+            String sql = "SELECT * FROM control_humedad WHERE id_registro = ?";
+            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
+            consultaSentencia.setInt(1, valor);
+            
+            this.resultadoConsulta = consultaSentencia.executeQuery();
+            System.out.println("EL REsultSet"+consultaSentencia);
 
+            while (this.resultadoConsulta.next()) {
+                int id = this.resultadoConsulta.getInt("id_registro");
+                String tipoEntidad = this.resultadoConsulta.getString("tipo_entidad");
+                double nivelHumedad = this.resultadoConsulta.getDouble("nivel_humedad");
+                String tipoHumedad = this.resultadoConsulta.getString("tipo_humedad");
+                String fecha = this.resultadoConsulta.getString("fecha");
+                
+                System.out.println("El id qva a qui"+id);
+
+                listaHumedades.add(id);
+                listaHumedades.add(tipoEntidad);
+                listaHumedades.add(nivelHumedad);
+                listaHumedades.add(tipoHumedad);
+                listaHumedades.add(fecha);
+            }
+            System.out.println("la fuckin lista"+listaHumedades);
+            this.resultadoConsulta.close();
+            consultaSentencia.close();
+
+            return listaHumedades;
+        }
+    
+    
+       public void actualizarUsuario(int id_registro, String tipo_entidad, double nivel_humedad, String tipo_humedad, String fecha) {
+           String sql = "UPDATE control_humedad SET tipo_entidad = ?, nivel_humedad = ?, tipo_humedad = ?, fecha= ? WHERE id_registro = ?";
+
+           try (PreparedStatement consultaSentencia = this.conex.prepareStatement(sql)) {
+               consultaSentencia.setString(1, tipo_entidad);
+               consultaSentencia.setDouble(2, nivel_humedad);
+               consultaSentencia.setString(3, tipo_humedad);
+               consultaSentencia.setString(4, fecha);
+               consultaSentencia.setInt(5, id_registro);
+
+               int filasAfectadas = consultaSentencia.executeUpdate();
+               System.out.println("Filas actualizadas: " + filasAfectadas);
+
+           } catch (SQLException e) {
+               e.printStackTrace();
+           }
+       }
+       
+       
+       
+       public boolean eliminarPorId(int id) {
+           String sql = "DELETE FROM control_humedad WHERE id_registro = ?";
+           boolean opcion = true;
+           try (PreparedStatement consultarSentencia = this.conex.prepareStatement(sql)) {
+               consultarSentencia.setInt(1, id);
+
+               int filasAfectadas = consultarSentencia.executeUpdate();
+               opcion = filasAfectadas > 0;
+           } catch (SQLException e) {
+               e.printStackTrace();
+           }
+           return opcion;     
+       }
    
 }
