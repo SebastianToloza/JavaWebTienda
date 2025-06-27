@@ -1,5 +1,5 @@
 #header{
-    background-color: yellow;
+    background-color: gray;
   
 }
 
@@ -154,7 +154,7 @@ button {
     border-radius: 20px 20px 20px 20px;
 }
 
-#registroConHumedad{
+#registroConCorralesHuertos{
 
     display: flex;
     flex-direction: column;

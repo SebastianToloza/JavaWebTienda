@@ -37,16 +37,16 @@ import java.util.ArrayList;
         }
     }
     
-    public ResultSet getid() throws SQLException{
-        String sqlText="SELECT id FROM iregistro_produccion";
+    public ResultSet getId() throws SQLException{
+        String sqlText="SELECT id FROM registro_produccion";
         Statement consultarSentencia =this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         
         return resultadoConsulta;
     }
     
-    public ResultSet getanimal() throws SQLException {
-        String sqlText = "SELECT tipodeespecie FROM iregistro_produccion";
+    public ResultSet getAnimal() throws SQLException {
+        String sqlText = "SELECT tipodeespecie FROM registro_produccion";
         Statement consultarSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultarSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -54,7 +54,7 @@ import java.util.ArrayList;
     }
     
     public ResultSet getCantidad() throws SQLException {
-        String sqlText = "SELECT cantidad FROM iregistro_produccion";
+        String sqlText = "SELECT cantidad FROM registro_produccion";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta =consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -63,14 +63,14 @@ import java.util.ArrayList;
     
     
     public ResultSet getestado() throws SQLException {
-        String sqlText = "SELECT estado FROM iregistro_produccion";
+        String sqlText = "SELECT estado FROM registro_produccion";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
     }
     
         public ResultSet getfecha() throws SQLException {
-        String sqlText = "SELECT fecha FROM iregistro_produccion";
+        String sqlText = "SELECT fecha FROM registro_produccion";
         Statement consultaSentencia = this.conex.createStatement();
         this.resultadoConsulta = consultaSentencia.executeQuery(sqlText);
         return this.resultadoConsulta;
@@ -78,7 +78,7 @@ import java.util.ArrayList;
 
     
     public boolean confirmarInformacionRegistro(int dato) throws SQLException{
-        String sqlText = "SELECT id FROM iregistro_produccion WHERE id = ?";
+        String sqlText = "SELECT id FROM registro_produccion WHERE id = ?";
         PreparedStatement consultarSentencia = this.conex.prepareStatement(sqlText);
         consultarSentencia.setInt(1, dato);
         this.resultadoConsulta = consultarSentencia.executeQuery();
@@ -103,7 +103,7 @@ import java.util.ArrayList;
     }
     
     public boolean agregarUsuario(int id, String animales,int cantidad, String estado, String fecha) throws SQLException{
-        String textosql = "INSERT INTO iregistro_produccion(id, tipodeespecie, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
+        String textosql = "INSERT INTO registro_produccion(id, tipodeespecie, cantidad, estado, fecha) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement modific = this.conex.prepareStatement(textosql);
         modific.setInt(1, id);
         modific.setString(2, animales);
@@ -121,18 +121,18 @@ import java.util.ArrayList;
     /*.-------------- faltan cosistas :< --------------*/
     public ArrayList<Object> obtenerTodasHumedades(int valor) throws SQLException {
             ArrayList<Object> listaHumedades = new ArrayList<>();
-            String sql = "SELECT * FROM control_humedad WHERE id_registro = ?";
-            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
+            String sql = "SELECT * FROM registro_produccion WHERE id = ?";
+                PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
             consultaSentencia.setInt(1, valor);
             
             this.resultadoConsulta = consultaSentencia.executeQuery();
             System.out.println("EL REsultSet"+consultaSentencia);
 
             while (this.resultadoConsulta.next()) {
-                int id = this.resultadoConsulta.getInt("id_registro");
-                String tipoEntidad = this.resultadoConsulta.getString("tipo_entidad");
-                double nivelHumedad = this.resultadoConsulta.getDouble("nivel_humedad");
-                String tipoHumedad = this.resultadoConsulta.getString("tipo_humedad");
+                int id = this.resultadoConsulta.getInt("id");
+                String tipoEntidad = this.resultadoConsulta.getString("tipodeespecie");
+                double nivelHumedad = this.resultadoConsulta.getDouble("cantidad");
+                String tipoHumedad = this.resultadoConsulta.getString("estado");
                 String fecha = this.resultadoConsulta.getString("fecha");
                 
                 System.out.println("El id qva a qui"+id);
@@ -152,7 +152,7 @@ import java.util.ArrayList;
     
     
        public void actualizarUsuario(int id_registro, String tipo_entidad, double nivel_humedad, String tipo_humedad, String fecha) {
-           String sql = "UPDATE control_humedad SET tipo_entidad = ?, nivel_humedad = ?, tipo_humedad = ?, fecha= ? WHERE id_registro = ?";
+           String sql = "UPDATE registro_produccion SET tipodeespecie = ?, cantidad = ?, estado = ?, fecha= ? WHERE id = ?";
 
            try (PreparedStatement consultaSentencia = this.conex.prepareStatement(sql)) {
                consultaSentencia.setString(1, tipo_entidad);
@@ -172,7 +172,7 @@ import java.util.ArrayList;
        
        
        public boolean eliminarPorId(int id) {
-           String sql = "DELETE FROM control_humedad WHERE id_registro = ?";
+           String sql = "DELETE FROM registro_produccion WHERE id = ?";
            boolean opcion = true;
            try (PreparedStatement consultarSentencia = this.conex.prepareStatement(sql)) {
                consultarSentencia.setInt(1, id);

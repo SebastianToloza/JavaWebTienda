@@ -57,7 +57,8 @@ public class RegistroProduccion extends HttpServlet {
                     if (confirmador) {
                         objDatoCorral.agregarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
                     } else {
-                        System.out.println("HOla");
+                        System.out.println("hola edicion");
+                        objDatoCorral.actualizarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
                     }
                 } catch (SQLException ex) {
                 }

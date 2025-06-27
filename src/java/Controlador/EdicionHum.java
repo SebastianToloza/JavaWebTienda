@@ -39,7 +39,7 @@ public class EdicionHum extends HttpServlet {
         Produccion_Agricola objDAO = new Produccion_Agricola();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-
+        System.out.println("Hola edicion :");
         Gson gson = new Gson();
         
         String jsonResponse = null;
