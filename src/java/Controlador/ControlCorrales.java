@@ -10,12 +10,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 
-/**
- *
- * @author SENA
- */
 @WebServlet(name = "ControlCorrales", urlPatterns = {"/ControlCorrales"})
 public class ControlCorrales extends HttpServlet {
 
@@ -65,12 +62,15 @@ public class ControlCorrales extends HttpServlet {
                     if (confirmador) {
                         objDatoCorral.agregarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
                     } else {
-                        System.out.println("HOla");
+                        
+                        objDatoCorral.actualizarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
+
                     }
                 } catch (SQLException ex) {
                 }
            
         processRequest(request, response);
+  
     }
 
     @Override

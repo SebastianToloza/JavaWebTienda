@@ -10,24 +10,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 
-/**
- *
- * @author SENA
- */
+
 @WebServlet(name = "Enfermedades", urlPatterns = {"/Enfermedades"})
 public class Enfermedades extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -51,7 +41,7 @@ public class Enfermedades extends HttpServlet {
         System.out.println("Hola");
         
                 int identificador = Integer.parseInt(request.getParameter("identificador"));
-                String tipoEntidad = request.getParameter("enfermedades");
+                String tipoEntidad = request.getParameter("enfermedad");
                 int nivelHumedad = Integer.parseInt(request.getParameter("cantidades"));
                 String tipoHumedad = request.getParameter("estados");
                 String fecha = request.getParameter("fechas");
@@ -65,7 +55,7 @@ public class Enfermedades extends HttpServlet {
                     if (confirmador) {
                         objDatoCorral.agregarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
                     } else {
-                        System.out.println("HOla");
+                        objDatoCorral.actualizarUsuario(identificador, tipoEntidad, nivelHumedad, tipoHumedad, fecha);
                     }
                 } catch (SQLException ex) {
                 }

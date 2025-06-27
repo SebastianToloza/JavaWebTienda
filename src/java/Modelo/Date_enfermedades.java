@@ -1,6 +1,7 @@
 
 package Modelo;
 import java.sql.*;
+import java.util.ArrayList;
 
 
    public class Date_enfermedades {
@@ -117,7 +118,68 @@ import java.sql.*;
         return  filasInsertadas>0;
     
     }
+    
+     public ArrayList<Object> obtenerTodasEnfermedades(int valor) throws SQLException {
+            ArrayList<Object> listaHumedades = new ArrayList<>();
+            String sql = "SELECT * FROM registro_enfermedades WHERE id_registro = ?";
+            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
+            consultaSentencia.setInt(1, valor);
+            
+            this.resultadoConsulta = consultaSentencia.executeQuery();
+            System.out.println("EL REsultSet"+consultaSentencia);
 
-   
+            while (this.resultadoConsulta.next()) {
+                int id = this.resultadoConsulta.getInt("id");
+                String tipoEntidad = this.resultadoConsulta.getString("enfermedad");
+                double nivelHumedad = this.resultadoConsulta.getDouble("Cantidad");
+                String tipoHumedad = this.resultadoConsulta.getString("estado");
+                String fecha = this.resultadoConsulta.getString("fecha");
+                
+                System.out.println("El id qva a qui"+id);
+
+                listaHumedades.add(id);
+                listaHumedades.add(tipoEntidad);
+                listaHumedades.add(nivelHumedad);
+                listaHumedades.add(tipoHumedad);
+                listaHumedades.add(fecha);
+            }
+            System.out.println("la fuckin lista"+listaHumedades);
+            this.resultadoConsulta.close();
+            consultaSentencia.close();
+
+            return listaHumedades;
+        }
+    
+    
+    public void actualizarUsuario(int id, String enfermedad, double cantidad, String estado, String fecha) {
+            String sql = "UPDATE registro_enfermedades SET enfermedad = ?, cantidad = ?, estado = ?, fecha= ? WHERE id = ?";
+
+            try (PreparedStatement consultaSentencia= this.conex.prepareStatement(sql)) {
+                consultaSentencia.setString(1, enfermedad);
+                consultaSentencia.setDouble(2, cantidad );
+                consultaSentencia.setString(3, estado);
+                consultaSentencia.setString(4, fecha);
+                consultaSentencia.setInt(5, id);
+
+                int filasAfectadas = consultaSentencia.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        public boolean eliminarPorId(int id) {
+        String sql = "DELETE FROM registro_enfermedades WHERE id = ?";
+        boolean opcion =true;
+        try (PreparedStatement consultarSentencia = this.conex.prepareStatement(sql)) {
+            consultarSentencia.setInt(1, id);
+
+           int filasAfectadas = consultarSentencia.executeUpdate();
+            opcion = filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return opcion;
+    }
 }
 

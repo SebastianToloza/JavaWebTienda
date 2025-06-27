@@ -1,5 +1,6 @@
 package Modelo;
 import java.sql.*;
+import java.util.ArrayList;
 
 
    public class Datehuertos_corrales {
@@ -115,6 +116,69 @@ import java.sql.*;
 
         return  filasInsertadas>0;
     
+    }
+    
+    public ArrayList<Object> obtenerTodosControles(int valor) throws SQLException {
+            ArrayList<Object> listaControl = new ArrayList<>();
+            String sql = "SELECT * FROM monitoreo_huertos_corrales WHERE id = ?";
+            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
+            consultaSentencia.setInt(1, valor);
+            
+            this.resultadoConsulta = consultaSentencia.executeQuery();
+            System.out.println("EL REsultSet"+consultaSentencia);
+
+            while (this.resultadoConsulta.next()) {
+                int id = this.resultadoConsulta.getInt("id");
+                String Establos = this.resultadoConsulta.getString("Establos");
+                double cantidad = this.resultadoConsulta.getDouble("cantidad");
+                String estado = this.resultadoConsulta.getString("estado");
+                String fecha = this.resultadoConsulta.getString("fecha");
+                
+                System.out.println("El id qva a qui"+id);
+
+                listaControl.add(id);
+                listaControl.add(Establos);
+                listaControl.add(cantidad);
+                listaControl.add(estado);
+                listaControl.add(fecha);
+            }
+            System.out.println("la fuckin lista"+listaControl);
+            this.resultadoConsulta.close();
+            consultaSentencia.close();
+
+            return listaControl;
+        }
+    
+    
+    public void actualizarUsuario(int id, String Establos, double cantidad, String estado, String fecha) {
+            String sql = "UPDATE monitoreo_huertos_corrales SET Establos = ?, cantidad = ?, estado = ?, fecha= ? WHERE id = ?";
+
+            try (PreparedStatement consultaSentencia= this.conex.prepareStatement(sql)) {
+                consultaSentencia.setString(1, Establos);
+                consultaSentencia.setDouble(2, cantidad );
+                consultaSentencia.setString(3, estado);
+                consultaSentencia.setString(4, fecha);
+                consultaSentencia.setInt(5, id);
+
+                int filasAfectadas = consultaSentencia.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        public boolean eliminarPorId(int id) {
+        String sql = "DELETE FROM monitoreo_huertos_corrales WHERE id = ?";
+        boolean opcion =true;
+        try (PreparedStatement consultarSentencia = this.conex.prepareStatement(sql)) {
+            consultarSentencia.setInt(1, id);
+
+           int filasAfectadas = consultarSentencia.executeUpdate();
+            opcion = filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return opcion;
     }
 
    
