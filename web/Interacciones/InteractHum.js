@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Variables para divs y botones
+    console.log("holi");
     const divsAutollenado = document.querySelectorAll('#registroConHumedad .InformacionRegistro');
     const eliminar = document.querySelectorAll('#registroConHumedad .Eliminar');
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Buscador
+    // ------------------Buscador
     const buscador = document.getElementById('barraBuscador');
     if (buscador) {
         buscador.addEventListener('input', function () {

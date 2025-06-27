@@ -41,48 +41,21 @@ public class SaltoFormulario extends HttpServlet {
             throws ServletException, IOException 
             
     {
-        HumedadData objHumedadData = new HumedadData();
         ArrayList<String> listaDatosID = new ArrayList<>();
         ArrayList<String> listaDatosFecha = new ArrayList<>();
 
         
         
-        try {
-            objHumedadData.hacerConexion();
-        } catch (SQLException ex) {
-            Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         
-        try {
-            ResultSet rsId = objHumedadData.getId();
-            ResultSet rsFecha = objHumedadData.getFecha();
-
-            
-            while (rsId.next()) {
-
-                listaDatosID.add(rsId.getString("id_registro"));
-
-            }
-            
-            while(rsFecha.next()){
-                
-                listaDatosFecha.add(rsFecha.getString("fecha"));
-                
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        Object vector[]={listaDatosID,listaDatosFecha};
-        System.out.println(vector);
-        HttpSession misession = request.getSession();
-        misession.setAttribute("datosTabla", vector);
 
         
         String accion = request.getParameter("eleccion");
 
         switch (accion) {
             case "produccionAgricola":
+                
+                
                 response.sendRedirect("RegistroProduccion.jsp");
                 break;
             case "ControlHuertosCorrales":
@@ -91,16 +64,48 @@ public class SaltoFormulario extends HttpServlet {
             case "registroEnfermedades":
                 response.sendRedirect("RegistroEnfermedades.jsp");
                 break;
+                
+                
+                
             case "controlHumedad":
                 
-               
+                HumedadData objHumedadData = new HumedadData();
+
+                try {
+                    objHumedadData.hacerConexion();
+                    ResultSet rsId = objHumedadData.getId();
+                    ResultSet rsFecha = objHumedadData.getFecha();
+
+                    while (rsId.next()) {
+
+                        listaDatosID.add(rsId.getString("id_registro"));
+
+                    }
+
+                    while (rsFecha.next()) {
+
+                        listaDatosFecha.add(rsFecha.getString("fecha"));
+
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(SaltoFormulario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Object vector[] = {listaDatosID, listaDatosFecha};
+                System.out.println(vector);
+                HttpSession misession = request.getSession();
+                misession.setAttribute("datosTabla", vector);
                 response.sendRedirect("ControlHumedad.jsp");
                 break;
+                
+                
             default:
                 response.sendRedirect("error.jsp");
                 break;
                 
         }
+        
+       
+        
         processRequest(request, response);
     }
 

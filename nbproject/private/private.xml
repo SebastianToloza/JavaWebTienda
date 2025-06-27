@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/web/ControlHumedad.jsp</file>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/src/java/Modelo/Sql/HumedadData.java</file>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/src/java/Controlador/ContolHuInfo.java</file>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/src/java/Controlador/ControlHumedadRegistros.java</file>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/src/java/Controlador/EdicionHum.java</file>
-            <file>file:/C:/Users/TOLOZA/Documents/GitHub/JavaWebTienda/src/java/Controlador/SaltoFormulario.java</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/web/Interacciones/InteractHum.js</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/src/java/Controlador/EliminarHum.java</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/src/java/Controlador/ContolHuInfo.java</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/src/java/Controlador/SaltoFormulario.java</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/web/index.jsp</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/web/ControlHumedad.jsp</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/web/Style/StyleControlHumedad.css</file>
+            <file>file:/C:/Users/SENA/Documents/GitHub/JavaWebTienda/src/java/Modelo/Sql/HumedadData.java</file>
         </group>
     </open-files>
 </project-private>
