@@ -14,7 +14,7 @@
             <div id="contenedor">
                 <div id="header">
                      <img src="Imagenes/Vaca.png" class="Vaquita">
-                    <h1>Enfermedades Animales</h1>
+                    <h1>Enfermedades Animales/Plantas</h1>
                      <img src="Imagenes/Planta.png" class="Plantita">
                 </div>
                 <form action="Enfermedades" method="post">
@@ -44,7 +44,7 @@
 
 
                     <div>
-                    <label for="Cantidad">Cantidad de Animales/Huertos:</label>
+                    <label for="Cantidad">Cantidad de Animales/Plantas:</label>
                     <input id="Cantidad" type="number" name="cantidades"><br>
                     </div>
 
