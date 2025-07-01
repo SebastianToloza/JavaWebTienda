@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("holi");
+    
+    
     const divsAutollenado = document.querySelectorAll('#registroConHumedad .InformacionRegistro');
     const eliminar = document.querySelectorAll('#registroConHumedad .Eliminar');
 

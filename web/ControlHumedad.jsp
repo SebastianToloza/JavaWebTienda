@@ -100,7 +100,6 @@
             
         </div>
         <script src="<%= request.getContextPath()%>/Interacciones/InteractHum.js" defer></script>
-        <script src="<%= request.getContextPath() %>/Interacciones/InteractHum.js" defer></script>
                         
                     
     </body> 

@@ -53,7 +53,7 @@ public class EdicionHum extends HttpServlet {
                 jsonResponse = gson.toJson(lista);
 
             }
-            else{
+            else{   
                 jsonResponse = gson.toJson(Collections.singletonMap("mensaje", "ID recibido: " + id));
 
             }
