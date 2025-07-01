@@ -114,49 +114,49 @@ import java.util.ArrayList;
 
 
         int filasInsertadas = modific.executeUpdate();
-
+        System.out.println("Las filas agregadas son: "+filasInsertadas);
         return  filasInsertadas>0;
     
     }
     
      public ArrayList<Object> obtenerTodasEnfermedades(int valor) throws SQLException {
-            ArrayList<Object> listaHumedades = new ArrayList<>();
-            String sql = "SELECT * FROM registro_enfermedades WHERE id_registro = ?";
-            PreparedStatement consultaSentencia = this.conex.prepareStatement(sql);
-            consultaSentencia.setInt(1, valor);
+            ArrayList<Object> listaenfermedad = new ArrayList<>();
+            String sql = "SELECT * FROM registro_enfermedades WHERE id = ?";
+            PreparedStatement consultaSentencia2 = this.conex.prepareStatement(sql);
+            consultaSentencia2.setInt(1, valor);
             
-            this.resultadoConsulta = consultaSentencia.executeQuery();
-            System.out.println("EL REsultSet"+consultaSentencia);
+            this.resultadoConsulta = consultaSentencia2.executeQuery();
+            System.out.println("EL REsultSet"+consultaSentencia2);
 
             while (this.resultadoConsulta.next()) {
                 int id = this.resultadoConsulta.getInt("id");
-                String tipoEntidad = this.resultadoConsulta.getString("enfermedad");
-                double nivelHumedad = this.resultadoConsulta.getDouble("Cantidad");
-                String tipoHumedad = this.resultadoConsulta.getString("estado");
+                String enfermedad = this.resultadoConsulta.getString("enfermedad");
+                double Cantidad = this.resultadoConsulta.getDouble("Cantidad");
+                String estado = this.resultadoConsulta.getString("estado");
                 String fecha = this.resultadoConsulta.getString("fecha");
                 
                 System.out.println("El id qva a qui"+id);
 
-                listaHumedades.add(id);
-                listaHumedades.add(tipoEntidad);
-                listaHumedades.add(nivelHumedad);
-                listaHumedades.add(tipoHumedad);
-                listaHumedades.add(fecha);
+                listaenfermedad.add(id);
+                listaenfermedad.add(enfermedad);
+                listaenfermedad.add(Cantidad);
+                listaenfermedad.add(estado);
+                listaenfermedad.add(fecha);
             }
-            System.out.println("la fuckin lista"+listaHumedades);
+            System.out.println("la fuckin lista"+listaenfermedad);
             this.resultadoConsulta.close();
-            consultaSentencia.close();
+            consultaSentencia2.close();
 
-            return listaHumedades;
+            return listaenfermedad;
         }
     
     
-    public void actualizarUsuario(int id, String enfermedad, double cantidad, String estado, String fecha) {
-            String sql = "UPDATE registro_enfermedades SET enfermedad = ?, cantidad = ?, estado = ?, fecha= ? WHERE id = ?";
-
+    public void actualizarUsuario(int id, String enfermedad, double Cantidad, String estado, String fecha) {
+            String sql = "UPDATE registro_enfermedades SET enfermedad = ?, Cantidad = ?, estado = ?, fecha= ? WHERE id = ?";
+                System.out.println("HOla estas en actualizar");
             try (PreparedStatement consultaSentencia= this.conex.prepareStatement(sql)) {
                 consultaSentencia.setString(1, enfermedad);
-                consultaSentencia.setDouble(2, cantidad );
+                consultaSentencia.setDouble(2, Cantidad );
                 consultaSentencia.setString(3, estado);
                 consultaSentencia.setString(4, fecha);
                 consultaSentencia.setInt(5, id);
@@ -175,6 +175,7 @@ import java.util.ArrayList;
             consultarSentencia.setInt(1, id);
 
            int filasAfectadas = consultarSentencia.executeUpdate();
+            System.out.println("esto es todo lo que se borro: "+filasAfectadas);
             opcion = filasAfectadas > 0;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -41,7 +41,7 @@ public class Enfermedades extends HttpServlet {
         System.out.println("Hola");
         
                 int identificador = Integer.parseInt(request.getParameter("identificador"));
-                String tipoEntidad = request.getParameter("enfermedad");
+                String tipoEntidad = request.getParameter("enfermedades");
                 int nivelHumedad = Integer.parseInt(request.getParameter("cantidades"));
                 String tipoHumedad = request.getParameter("estados");
                 String fecha = request.getParameter("fechas");

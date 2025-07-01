@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const info = contenedor.querySelector('.InformacionRegistro p').textContent;
             const id = info.split(':')[1].trim();
             console.log("esto es el ID: " + id);
-            fetch(`/JavaWebTienda22/EliminarCorrales?id=${encodeURIComponent(id)}`)
+            fetch(`/JavaWebTienda22/EliminarEnfermedades?id=${encodeURIComponent(id)}`)
                 .then(response => response.text())
                 .then(data => {
                     console.log("Decicion: "+data);
                     if (data == "ok") {
                         alert("Se elimino el objeto");
-                        contenedor.remove();  // Remueve directamente el contenedor
+                        contenedor.remove();
                     } else {
                         alert("Error al eliminar");
                     }

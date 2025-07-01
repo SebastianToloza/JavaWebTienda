@@ -30,6 +30,7 @@ public class EliminarEnfermedades extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("hola servlet eliminar");
         String id = request.getParameter("id");
         int valor = Integer.parseInt(id);
 

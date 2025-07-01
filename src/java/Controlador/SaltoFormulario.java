@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import Modelo.Date_enfermedades;
 import  Modelo.Datehuertos_corrales;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -89,19 +90,19 @@ public class SaltoFormulario extends HttpServlet {
                 Object vector2[] = {listaDatosID, listaDatosFecha};
                 System.out.println(vector2);
                 HttpSession misession2 = request.getSession();
-                misession.setAttribute("datosTabla", vector2);
+                misession2.setAttribute("datosTabla", vector2);
                 
                 response.sendRedirect("ControlHuertosCorrales.jsp");
 
                 break;
             case "registroEnfermedades":
                 /*---------------------- 3 -------------------*/
-                Datehuertos_corrales objDatehuertos_corrales = new Datehuertos_corrales();
+                Date_enfermedades objDate_enfermedades = new Date_enfermedades();
 
                 try {
-                    objDatehuertos_corrales.hacerConexion();
-                    ResultSet rsId = objDatehuertos_corrales.getid();
-                    ResultSet rsFecha = objDatehuertos_corrales.getfecha();
+                    objDate_enfermedades.hacerConexion();
+                    ResultSet rsId = objDate_enfermedades.getid();
+                    ResultSet rsFecha = objDate_enfermedades.getfecha();
 
                     while (rsId.next()) {
 
